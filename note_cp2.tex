@@ -1,0 +1,337 @@
+%\documentclass{article}
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{geometry}
+\geometry{letterpaper}
+
+%\usepackage{showlabels}
+
+\textwidth = 6.0 in
+\textheight = 8.5 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.2 in
+\headheight = 0.0 in
+\headsep = 0.0 in
+%\parskip = 0.05in
+\parindent = 0.35in
+
+
+%% common definitions
+\def\stackunder#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\nn{\nonumber}
+\def\baselinestretch{1.1}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\ba{\beq\new\begin{array}{c}}
+\def\ea{\end{array}\eeq}
+\def\be{\ba}
+\def\ee{\ea}
+\def\stackreb#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\Tr{{\rm Tr}}
+\newcommand{\gsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle>}{\sim}\;$}}
+\newcommand{\lsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle<}{\sim}\;$}}
+%%%%%%%%%%
+\newcommand{\nfour}{${\mathcal N}=4$ }
+\newcommand{\ntwo}{${\mathcal N}=2$ }
+\newcommand{\ntwon}{${\mathcal N}=2$}
+\newcommand{\ntwot}{${\mathcal N}= \left(2,2\right) $ }
+\newcommand{\ntwoo}{${\mathcal N}= \left(0,2\right) $ }
+\newcommand{\ntwoon}{${\mathcal N}= \left(0,2\right) $}
+\newcommand{\none}{${\mathcal N}=1$ }
+%%%%%%%%%%%
+\newcommand{\nonen}{${\mathcal N}=1$}
+\newcommand{\vp}{\varphi}
+\newcommand{\pt}{\partial}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\gs}{g^{2}}
+\newcommand{\qt}{\tilde q}
+%\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+%%
+\newcommand{\p}{\partial}
+\newcommand{\wt}{\widetilde}
+\newcommand{\ov}{\overline}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\md}{\mathcal{D}}
+
+\newcommand{\GeV}{{\rm GeV}}
+\newcommand{\eV}{{\rm eV}}
+\newcommand{\Heff}{{\mathcal{H}_{\rm eff}}}
+\newcommand{\Leff}{{\mathcal{L}_{\rm eff}}}
+\newcommand{\el}{{\rm EM}}
+\newcommand{\uflavor}{\mathbf{1}_{\rm flavor}}
+\newcommand{\lgr}{\left\lgroup}
+\newcommand{\rgr}{\right\rgroup}
+
+\newcommand{\Mpl}{M_{\rm Pl}}
+\newcommand{\suc}{{{\rm SU}_{\rm C}(3)}}
+\newcommand{\sul}{{{\rm SU}_{\rm L}(2)}}
+\newcommand{\sutw}{{\rm SU}(2)}
+\newcommand{\suth}{{\rm SU}(3)}
+\newcommand{\ue}{{\rm U}(1)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Slash character...
+\def\slashed#1{\setbox0=\hbox{$#1$}             % set a box for #1
+   \dimen0=\wd0                                 % and get its size
+   \setbox1=\hbox{/} \dimen1=\wd1               % get size of /
+   \ifdim\dimen0>\dimen1                        % #1 is bigger
+      \rlap{\hbox to \dimen0{\hfil/\hfil}}      % so center / in box
+      #1                                        % and print #1
+   \else                                        % / is bigger
+      \rlap{\hbox to \dimen1{\hfil$#1$\hfil}}   % so center #1
+      /                                         % and print /
+   \fi}                                         %
+%%EXAMPLE:  $\slashed{E}$ or $\slashed{E}_{t}$
+
+%%
+
+\newcommand{\LN}{\Lambda_\text{SU($N$)}}
+\newcommand{\sunu}{{\rm SU($N$) $\times$ U(1) }}
+\newcommand{\sunun}{{\rm SU($N$) $\times$ U(1)}}
+\def\cfl {$\text{SU($N$)}_{\rm C+F}$ }
+\def\cfln {$\text{SU($N$)}_{\rm C+F}$}
+\newcommand{\mUp}{m_{\rm U(1)}^{+}}
+\newcommand{\mUm}{m_{\rm U(1)}^{-}}
+\newcommand{\mNp}{m_\text{SU($N$)}^{+}}
+\newcommand{\mNm}{m_\text{SU($N$)}^{-}}
+\newcommand{\AU}{\mc{A}^{\rm U(1)}}
+\newcommand{\AN}{\mc{A}^\text{SU($N$)}}
+\newcommand{\aU}{a^{\rm U(1)}}
+\newcommand{\aN}{a^\text{SU($N$)}}
+\newcommand{\baU}{\ov{a}{}^{\rm U(1)}}
+\newcommand{\baN}{\ov{a}{}^\text{SU($N$)}}
+\newcommand{\lU}{\lambda^{\rm U(1)}}
+\newcommand{\lN}{\lambda^\text{SU($N$)}}
+%\newcommand{\Tr}{{\rm Tr\,}}
+\newcommand{\bxir}{\ov{\xi}{}_R}
+\newcommand{\bxil}{\ov{\xi}{}_L}
+\newcommand{\xir}{\xi_R}
+\newcommand{\xil}{\xi_L}
+\newcommand{\bzl}{\ov{\zeta}{}_L}
+\newcommand{\bzr}{\ov{\zeta}{}_R}
+\newcommand{\zr}{\zeta_R}
+\newcommand{\zl}{\zeta_L}
+\newcommand{\nbar}{\ov{n}}
+
+\newcommand{\ssm}{{\scriptscriptstyle(M)}}
+\newcommand{\sse}{{\scriptscriptstyle(E)}}
+\newcommand{\cell}{{\mathcal L}}
+\newcommand{\CPC}{CP($N-1$)$\times$C }
+\newcommand{\CPCn}{CP($N-1$)$\times$C}
+\newcommand{\cpn}{CP$(N-1)\,$}
+
+\newcommand{\lar}{\lambda_R}
+\newcommand{\lal}{\lambda_L}
+\newcommand{\larl}{\lambda_{R,L}}
+\newcommand{\lalr}{\lambda_{L,R}}
+\newcommand{\blar}{\ov{\lambda}{}_R}
+\newcommand{\blal}{\ov{\lambda}{}_L}
+\newcommand{\blarl}{\ov{\lambda}{}_{R,L}}
+\newcommand{\blalr}{\ov{\lambda}{}_{L,R}}
+
+\newcommand{\tgamma}{\wt{\gamma}}
+\newcommand{\btgamma}{\ov{\tgamma}}
+\newcommand{\bpsi}{\ov{\psi}{}}
+\newcommand{\bphi}{\ov{\phi}{}}
+\newcommand{\bxi}{\ov{\xi}{}}
+
+\newcommand{\ff}{\mc{F}}
+\newcommand{\bff}{\ov{\mc{F}}}
+
+\newcommand{\eer}{\epsilon_R}
+\newcommand{\eel}{\epsilon_L}
+\newcommand{\eerl}{\epsilon_{R,L}}
+\newcommand{\eelr}{\epsilon_{L,R}}
+\newcommand{\beer}{\ov{\epsilon}{}_R}
+\newcommand{\beel}{\ov{\epsilon}{}_L}
+\newcommand{\beerl}{\ov{\epsilon}{}_{R,L}}
+\newcommand{\beelr}{\ov{\epsilon}{}_{L,R}}
+
+\newcommand{\bi}{{\bar \imath}}
+\newcommand{\bj}{{\bar \jmath}}
+\newcommand{\bk}{{\bar k}}
+\newcommand{\bl}{{\bar l}}
+\newcommand{\bm}{{\bar m}}
+
+\newcommand{\hsigma}{{\hat{\sigma}}}
+\newcommand{\ww}{\tilde{\mc{W}}{}_\text{eff}}
+
+\begin{document}
+
+{\bf\centering
+\large\underline{Difference of Superpotential in CP(2) at Large Real Masses}}
+\vspace{1.0cm}
+
+	The masses so far were taken ``real'', that is, one of the mass (call it $m_0$) sits
+	on the real negative axis. 
+	The original motivation for this choice is the AD point, for which this is the case.
+	However, now $ |m| $ is taken large, $ | m | \,\gg\, \Lambda $.
+
+	Again, denote
+\beq
+	\ww (\hsigma) ~~=~~ 4\pi \cdot \mc{W}_\text{eff}(\hsigma)\,,
+\eeq
+	such that
+\beq
+	\ww (\sigma_p) ~~=~~ -\, N\, \sigma_p ~-~ \sum\, m_j\, \ln (\sigma_p \,-\, m_j)\,.
+\eeq
+
+	I performed the expansion of the vacuum values $ \ww(\sigma_p) $ in $ \Lambda / m $.
+	The vacua $ \sigma_p $ are chosen as
+\begin{align}
+%
+\notag
+	\sigma_0 & ~~=~~ \sqrt[3]{\Lambda^3 \,+\, m_0^3~} \,,  \\
+%
+	\sigma_1 & ~~=~~ \sqrt[3]{\Lambda^3 \,+\, m_0^3~} \, e^{2\pi i /3}\,, \\
+%
+	\sigma_2 & ~~=~~ \sqrt[3]{\Lambda^3 \,+\, m_0^3~} \, e^{- 2\pi i /3}\,.
+\notag
+\end{align}
+	Note that $ m_0 $ is negative, therefore the cubic root (and hence $\sigma_0$) is a negative
+	real number.
+	The answer for the vacuum values is as follows (here $ m \,\equiv\, |m_0|$),
+\begin{align}
+%
+\label{vval}
+	\ww(\sigma_0) & ~~=~~ m_0 
+	\lgr   3\,\ln \Bigl(\frac{m}{\Lambda}\Bigl) \,+\,
+\Bigl(\frac{3}{2} \ln 3 \,+\, \frac{5}{6} \pi \sqrt{3} \,-\, 3 \Bigr)
+\,+\, O \bigl( \Lambda/m_0 \bigr)^3 \rgr ,
+	\\[2mm]
+%
+\notag
+	\ww(\sigma_1) & ~~=~~ m_1 
+	\lgr   3\,\ln \Bigl(\frac{m}{\Lambda}\Bigl) \,+\,
+\Bigl(\frac{3}{2} \ln 3 \,-\, \frac{1}{6} \pi \sqrt{3} \,-\, 3 \,-\, i\pi \Bigr)
+\,+\, O \bigl( \Lambda/m_0 \bigr)^3 \rgr ,
+	\\[2mm]
+%
+\notag
+	\ww(\sigma_2) & ~~=~~ m_2
+	\lgr   3\,\ln \Bigl(\frac{m}{\Lambda}\Bigl) \,+\,
+\Bigl(\frac{3}{2} \ln 3 \,-\, \frac{1}{6} \pi \sqrt{3} \,-\, 3 \,+\, i\pi \Bigr)
+\,+\, O \bigl( \Lambda/m_0 \bigr)^3 \rgr .
+\end{align}
+	The structure of the answer is as follows. 
+	The first term is the large logarithmic term, which Misha mentioned.
+	This term is the same for all vacua.
+	The second round bracket is a finite number. 
+	It is {\it real} for the vacuum $ \sigma_0 $, and mutually conjugate for the other two vacua.
+	Finally, $ O \bigl( \Lambda/m_0 \bigr)^3 $ represents corrections which go in powers
+	of $ (\Lambda/m)^3 $.
+	These corrections are in general complex.
+
+	Now, at large $m$, the logarithmic term in each of values of \eqref{vval} dominates, and since
+	it is the same for all vacua, then indeed,
+\beq
+	\ww(\sigma_k) ~~\propto~~ m_k\,,  \qquad\qquad \lim~m~\gg~\Lambda\,,
+\eeq
+	with a {\it real} coefficient of proportionality. 
+	But that amounts to ignoring all finite terms in Eq.~\eqref{vval}.
+
+	As for the kink masses, or the difference of the superpotential values, they come out to be
+\beq
+	\ww(\sigma_{k+1}) ~-~ \ww(\sigma_k)  ~~=~~ 
+	(m_{k+1} \,-\, m_k)
+	\lgr R ~+~ 3\, \ln \Bigl(\frac{m}{\Lambda}\Bigl) ~+~ O \bigl( \Lambda/m_0 \bigr)^3 \rgr,
+\eeq
+	where $ R $ is a finite contribution
+\beq
+	R ~~=~~ \frac{\pi}{2\sqrt{3}} \,+\, \frac{3}{2} \ln 3 \,-\, 3 \,.
+\eeq
+	Note that the difference of the superpotential values is proportional to the corresponding
+	mass difference $ m_{k+1} \,-\, m_k $ with a {\it real} coefficient,
+	at the logarithmic and finite orders
+	(it is clear that the corrections will be complex, since at finite mass values,
+	{\it i.e.} near the CMS the proportionality coefficient must become imaginary). 
+
+	Equations \eqref{vval} agree with the previously derived formula, which in the current
+	notations for the masses looks as 
+\beq
+\label{wk}
+	\ww (\sigma_{k+1}) ~~=~~ e^{2\pi i /3 } \cdot \ww (\sigma_k) ~+~ 2\pi i \cdot m_2\,.
+\eeq
+	(with $ m_2 \,=\, |m|\, e^{i \pi /3} $).
+	Again, if $ m $ is taken very large, then the logarithmic term in the superpotential
+	dominates, and one has asymptotically,
+\beq
+	\ww (\sigma_{k+1}) ~~=~~ e^{2\pi i /3 } \cdot \ww (\sigma_k) \,, \qquad\qquad
+				\lim~m~\gg~\Lambda\,.
+\eeq
+
+	Formula \eqref{wk} is valid for finite masses as well (as long as 
+	$ |\sigma| \,<\, m $).
+	The mass on the RHS of \eqref{wk} is independent of $ k $.
+	Furthermore, the same formula was earlier derived for CP($N-1$) with odd $N$, for which 
+	in general 
+\beq
+\label{wkN}
+	\ww (\sigma_{k+1}) ~~=~~ e^{2\pi i /N } \cdot \ww (\sigma_k) ~+~ 2\pi i \cdot m_*\,.
+\eeq
+	where $ m_* $ is that mass which is $ |m|\,e^{i\pi/N} $.
+	Then, one has
+\beq
+	\ww (\sigma_{p}) ~~=~~ e^{2\pi i p/N } \cdot \ww (\sigma_0)
+		~+~ 2\pi i \bigl( m_* \,+\, m_{*+1} \,+\, \dots \,+\, m_{*+(p-1)} \bigr)\,.
+\eeq
+	Since the masses are on the circle, the bracket term forms a geometric progression,
+	and therefore {\it is} expressible as the mass difference $ m_p \,-\, m_0 $ 
+	(times a, in general, complex coefficient). 
+
+	However, equations \eqref{vval}, \eqref{wk} and \eqref{wkN} were derived for
+	{\it real} $ m_0 $.
+	Generalization to complex $ m_0 $ needs to be done.
+
+
+
+\begin{thebibliography}{99}
+%\cite{Olmez:2007sg}
+\bibitem{Olmez:2007sg}
+  S.~Olmez and M.~Shifman,
+  %``Curves of Marginal Stability in Two-Dimensional CP(N-1) Models with
+  %Z_N-Symmetric Twisted Masses,''
+  J.\ Phys.\ A  {\bf 40}, 11151 (2007)
+  [arXiv:hep-th/0703149].
+  %%CITATION = JPAGB,A40,11151;%%
+
+%\cite{Dorey:1998yh}
+\bibitem{Dorey:1998yh}
+  N.~Dorey,
+  %``The BPS spectra of two-dimensional supersymmetric gauge theories with
+  %twisted mass terms,''
+  JHEP {\bf 9811}, 005 (1998)
+  [arXiv:hep-th/9806056].
+  %%CITATION = JHEPA,9811,005;%%
+
+%\cite{Hanany:1997vm}
+\bibitem{Hanany:1997vm}
+  A.~Hanany and K.~Hori,
+  %``Branes and N = 2 theories in two dimensions,''
+  Nucl.\ Phys.\  B {\bf 513}, 119 (1998)
+  [arXiv:hep-th/9707192].
+  %%CITATION = NUPHA,B513,119;%%
+
+%\cite{Dorey:1999zk}
+\bibitem{Dorey:1999zk}
+  N.~Dorey, T.~J.~Hollowood and D.~Tong,
+  %``The BPS spectra of gauge theories in two and four dimensions,''
+  JHEP {\bf 9905}, 006 (1999)
+  [arXiv:hep-th/9902134].
+  %%CITATION = JHEPA,9905,006;%%
+
+\end{thebibliography}
+
+
+
+\end{document}
+

@@ -1,0 +1,375 @@
+%\documentclass{article}
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{geometry}
+\geometry{letterpaper}
+
+%\usepackage{showlabels}
+
+\textwidth = 6.0 in
+\textheight = 8.5 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.2 in
+\headheight = 0.0 in
+\headsep = 0.0 in
+%\parskip = 0.05in
+\parindent = 0.35in
+
+
+%% common definitions
+\def\stackunder#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\nn{\nonumber}
+\def\baselinestretch{1.1}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\ba{\beq\new\begin{array}{c}}
+\def\ea{\end{array}\eeq}
+\def\be{\ba}
+\def\ee{\ea}
+\def\stackreb#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\Tr{{\rm Tr}}
+\newcommand{\gsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle>}{\sim}\;$}}
+\newcommand{\lsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle<}{\sim}\;$}}
+%%%%%%%%%%
+\newcommand{\nfour}{${\mathcal N}=4$ }
+\newcommand{\ntwo}{${\mathcal N}=2$ }
+\newcommand{\ntwon}{${\mathcal N}=2$}
+\newcommand{\ntwot}{${\mathcal N}= \left(2,2\right) $ }
+\newcommand{\ntwoo}{${\mathcal N}= \left(0,2\right) $ }
+\newcommand{\ntwoon}{${\mathcal N}= \left(0,2\right) $}
+\newcommand{\none}{${\mathcal N}=1$ }
+%%%%%%%%%%%
+\newcommand{\nonen}{${\mathcal N}=1$}
+\newcommand{\vp}{\varphi}
+\newcommand{\pt}{\partial}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\gs}{g^{2}}
+\newcommand{\qt}{\tilde q}
+%\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+%%
+\newcommand{\p}{\partial}
+\newcommand{\wt}{\widetilde}
+\newcommand{\ov}{\overline}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\md}{\mathcal{D}}
+
+\newcommand{\GeV}{{\rm GeV}}
+\newcommand{\eV}{{\rm eV}}
+\newcommand{\Heff}{{\mathcal{H}_{\rm eff}}}
+\newcommand{\Leff}{{\mathcal{L}_{\rm eff}}}
+\newcommand{\el}{{\rm EM}}
+\newcommand{\uflavor}{\mathbf{1}_{\rm flavor}}
+\newcommand{\lgr}{\left\lgroup}
+\newcommand{\rgr}{\right\rgroup}
+
+\newcommand{\Mpl}{M_{\rm Pl}}
+\newcommand{\suc}{{{\rm SU}_{\rm C}(3)}}
+\newcommand{\sul}{{{\rm SU}_{\rm L}(2)}}
+\newcommand{\sutw}{{\rm SU}(2)}
+\newcommand{\suth}{{\rm SU}(3)}
+\newcommand{\ue}{{\rm U}(1)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Slash character...
+\def\slashed#1{\setbox0=\hbox{$#1$}             % set a box for #1
+   \dimen0=\wd0                                 % and get its size
+   \setbox1=\hbox{/} \dimen1=\wd1               % get size of /
+   \ifdim\dimen0>\dimen1                        % #1 is bigger
+      \rlap{\hbox to \dimen0{\hfil/\hfil}}      % so center / in box
+      #1                                        % and print #1
+   \else                                        % / is bigger
+      \rlap{\hbox to \dimen1{\hfil$#1$\hfil}}   % so center #1
+      /                                         % and print /
+   \fi}                                         %
+%%EXAMPLE:  $\slashed{E}$ or $\slashed{E}_{t}$
+
+%%
+
+\newcommand{\LN}{\Lambda_\text{SU($N$)}}
+\newcommand{\sunu}{{\rm SU($N$) $\times$ U(1) }}
+\newcommand{\sunun}{{\rm SU($N$) $\times$ U(1)}}
+\def\cfl {$\text{SU($N$)}_{\rm C+F}$ }
+\def\cfln {$\text{SU($N$)}_{\rm C+F}$}
+\newcommand{\mUp}{m_{\rm U(1)}^{+}}
+\newcommand{\mUm}{m_{\rm U(1)}^{-}}
+\newcommand{\mNp}{m_\text{SU($N$)}^{+}}
+\newcommand{\mNm}{m_\text{SU($N$)}^{-}}
+\newcommand{\AU}{\mc{A}^{\rm U(1)}}
+\newcommand{\AN}{\mc{A}^\text{SU($N$)}}
+\newcommand{\aU}{a^{\rm U(1)}}
+\newcommand{\aN}{a^\text{SU($N$)}}
+\newcommand{\baU}{\ov{a}{}^{\rm U(1)}}
+\newcommand{\baN}{\ov{a}{}^\text{SU($N$)}}
+\newcommand{\lU}{\lambda^{\rm U(1)}}
+\newcommand{\lN}{\lambda^\text{SU($N$)}}
+%\newcommand{\Tr}{{\rm Tr\,}}
+\newcommand{\bxir}{\ov{\xi}{}_R}
+\newcommand{\bxil}{\ov{\xi}{}_L}
+\newcommand{\xir}{\xi_R}
+\newcommand{\xil}{\xi_L}
+\newcommand{\bzl}{\ov{\zeta}{}_L}
+\newcommand{\bzr}{\ov{\zeta}{}_R}
+\newcommand{\zr}{\zeta_R}
+\newcommand{\zl}{\zeta_L}
+\newcommand{\nbar}{\ov{n}}
+
+\newcommand{\ssm}{{\scriptscriptstyle(M)}}
+\newcommand{\sse}{{\scriptscriptstyle(E)}}
+\newcommand{\cell}{{\mathcal L}}
+\newcommand{\CPC}{CP($N-1$)$\times$C }
+\newcommand{\CPCn}{CP($N-1$)$\times$C}
+\newcommand{\cpn}{CP$(N-1)\,$}
+
+\newcommand{\lar}{\lambda_R}
+\newcommand{\lal}{\lambda_L}
+\newcommand{\larl}{\lambda_{R,L}}
+\newcommand{\lalr}{\lambda_{L,R}}
+\newcommand{\blar}{\ov{\lambda}{}_R}
+\newcommand{\blal}{\ov{\lambda}{}_L}
+\newcommand{\blarl}{\ov{\lambda}{}_{R,L}}
+\newcommand{\blalr}{\ov{\lambda}{}_{L,R}}
+
+\newcommand{\tgamma}{\wt{\gamma}}
+\newcommand{\btgamma}{\ov{\tgamma}}
+\newcommand{\bpsi}{\ov{\psi}{}}
+\newcommand{\bphi}{\ov{\phi}{}}
+\newcommand{\bxi}{\ov{\xi}{}}
+
+\newcommand{\ff}{\mc{F}}
+\newcommand{\bff}{\ov{\mc{F}}}
+
+\newcommand{\eer}{\epsilon_R}
+\newcommand{\eel}{\epsilon_L}
+\newcommand{\eerl}{\epsilon_{R,L}}
+\newcommand{\eelr}{\epsilon_{L,R}}
+\newcommand{\beer}{\ov{\epsilon}{}_R}
+\newcommand{\beel}{\ov{\epsilon}{}_L}
+\newcommand{\beerl}{\ov{\epsilon}{}_{R,L}}
+\newcommand{\beelr}{\ov{\epsilon}{}_{L,R}}
+
+\newcommand{\bi}{{\bar \imath}}
+\newcommand{\bj}{{\bar \jmath}}
+\newcommand{\bk}{{\bar k}}
+\newcommand{\bl}{{\bar l}}
+\newcommand{\bm}{{\bar m}}
+
+\newcommand{\hsigma}{{\hat{\sigma}}}
+\newcommand{\ww}{\tilde{\mc{W}}{}_\text{eff}}
+
+\begin{document}
+
+{\bf\centering
+\large\underline{A note on vacuum values of the superpotential in CP(2)}}
+%\vspace{0.5cm}
+
+\section*{CMS Condition in CP(2)}
+	Consider CP(2) model for simplicity.
+	It is enough to focus on the vacua $ \sigma_1 $ and $ \sigma_0 $. 
+	The superpotential is
+\beq
+\label{Weff}
+	\mc{W}_\text{eff} (\hsigma) ~~=~~-\, \frac{1}{2}i \left(\frac{\theta}{2\pi}\right)\, \hsigma ~+~
+		\frac{1}{4\pi} \sum_j (\hsigma - m_j)\, 
+					\left\{ \ln \frac{\hsigma - m_j}{\Lambda} ~-~ 1 \right\}\,.
+\eeq
+	Let us denote
+\beq
+	\ww (\hsigma) ~~=~~ 4\pi\, \mc{W}_\text{eff} (\hsigma)\,.
+\eeq
+	Then it can be shown that the superpotential values in the vacua $ \sigma_1 $ and 
+	$ \sigma_0 $ are related by
+\beq
+\label{w1}
+	\ww (\sigma_1) ~~=~~ e^{2\pi i /3 } \cdot \ww (\sigma_0) ~+~ 2\pi i \cdot m_1\,,
+\eeq
+	where $ m_1 ~=~ |m|\,e^{i \pi /3 } $.
+	Since this equation is derived in the vicinity of the AD point, 
+	it is valid only for sufficiently small $ \sigma $, so that various overhangs
+	of phases of $ \hsigma - m_j $ over $ 2\pi i $ do not occur due to the size of $ \hsigma $.
+	In fact $ |\sigma| ~<~ m $ is enough.
+%%	Since for CP(2) we have to choose $ m_0 $ negative, the latter condition is always obeyed
+%%\beq
+%%	| \sigma |^3 ~~=~~ |\, \sqrt[3]{ \Lambda^3 ~+~ m^3 } \,|^3 
+%%		     ~~=~~ |\, \Lambda^3 ~+~ m^3 \,|  ~~<~~  | m |^3\,,
+%%\eeq
+%%	as long as $ | m | > \Lambda $.
+
+	Equation \eqref{w1} was derived by taking expression \eqref{Weff} literally. 
+	As it is seen, the difference of the superpotential values in $ \sigma_1 $ and
+	$ \sigma_0 $ does indeed involve a mass, 
+\begin{align}
+%
+\notag
+	\ww (\sigma_1) ~-~ \ww (\sigma_0) & ~~=~~ 
+	\ww (\sigma_0) \, \Big( e^{2\pi i /3} ~-~ 1 \Big)  ~+~  2\pi i \cdot |m|\,e^{ i\pi/3 }
+	~~=~~ \\[2mm]
+%
+\label{wdiff}
+	& 
+	~~=~~
+	\ww (\sigma_0) \, \Big(\, \frac{m_1}{m_0}  ~-~ 1 \,\Big)  ~+~  2\pi i \cdot |m|\,e^{ i\pi/3 }\,.
+\end{align}
+	For the masses to sit on the CMS, this difference needs to be compared to any
+	mass difference, {\it e.g.}
+\beq
+	m_{k+1} ~-~ m_k  ~~\propto~~ e^{2 \pi i/ 3} ~-~ 1\,.
+\eeq
+	The CMS condition is then
+\beq
+	\ww (\sigma_1) ~-~ \ww(\sigma_0) ~~\propto~~ 2\pi i\, ( m_{k+1} ~-~ m_k )\,,
+\eeq
+	with a real constant of proportionality.
+	However, it can be seen that equation \eqref{wdiff} in the vicinity of $ \sigma ~=~ 0 $, 
+	that is,  $ m ~\to~ \Lambda $, has a trivial solution to the CMS condition,
+\beq
+	\ww (0) ~~=~~ -\, \frac{2\pi}{\sqrt{3}}\, \Lambda 
+		~~=~~ -\, 2\pi i \, \Lambda \cdot \frac{1}{e^{i\pi/3} \,-\, e^{-i\pi/3}}\,.
+\eeq
+	At this value of $ \ww $, the mass term on the RHS of Eq.~\eqref{wdiff} exactly 
+	cancels the $ \ww( \sigma_0 ) $ term, 
+	and therefore gives a zero difference of the superpotential values,
+\beq
+	\ww ( \sigma_1 ) ~~=~~ \ww( \sigma_0 )\,, \qquad \lim ~|\sigma| ~\to~ 0\,.
+\eeq
+	The same value of $ \ww $ is obtained by approaching the AD point in the mirror representation
+\begin{align}
+\notag
+%
+	\hat{\mc{W}} & ~~=~~
+		-\, \frac{\Lambda}{4\pi} 
+			\lgr   X \,+\, Y \,+\, \frac{1}{X Y}  ~-~  \right. \\
+%
+\label{wmirror}
+	&
+	\left.
+	\qquad\qquad\qquad
+			 ~-~  \left\{ \frac{m_1}{\Lambda}\, \ln\, X ~+~
+				      \frac{m_2}{\Lambda}\, \ln\, Y ~+~
+				      \frac{m_3}{\Lambda}\, 
+					\ln\, \frac{1}{X Y} \right\} \rgr.
+\end{align}
+	Here one of the AD points is $ X ~=~ 1 $, $ Y ~=~ e^{2\pi i /3} $.
+	Substitution of this into \eqref{wmirror} gives
+\beq
+	4\pi \cdot
+	\mc{W}_\text{mirror}^\text{CP(2)} ~~=~~ -\, \frac{2\pi}{\sqrt{3}}\, \Lambda\,.
+\eeq
+
+\section*{General Discussion}
+
+	The central argument in the derivation of Eq.~\eqref{w1} is that the vacuum values
+	seem not to need any further adjustment from what is obtained from Eq.~\eqref{Weff}.
+	The $ Z_{2N} $ symmetry manifests itself in the $ Z_N $ structure of the vacua, in each of which
+	the former is broken to $ Z_2 $ (I guess this stays true as long as the masses are
+	on the circle).
+
+	In the massless CP($N-1$) theory, 
+\beq
+	-2\, \mc{W}_\text{eff} (\hsigma) ~~=~~ i\, \tau\hsigma ~-~ 
+		\frac{N}{2\pi}\, \hsigma \, 
+				      \big( \ln (\hsigma/\mu) ~-~ 1 \big)\,,
+\eeq
+	it appears that in any vacuum, the logarithm term exactly cancels the $ i\, \tau\hsigma $ term, 
+	and the superpotential then is proportional to $ \sigma_j $, and, 
+	accordingly, its values are the $ Z_N $ roots of unity.
+	For example, in CP(1) this is reproduced in the mirror representation via
+\begin{align}
+%
+\label{mirrvv}
+	\mc{W}_\text{mirror}^\text{CP(1)}\bigg|_\text{vacuum (1)} & ~~=~~
+		-\, \frac{\Lambda}{4\pi} 
+			\lgr \sqrt{ (\Delta m / \Lambda)^2 + 4\, } ~~-~~ \frac{\Delta m}{\Lambda}\, \ln\, X^{(1)} \rgr,
+	\\
+%
+\notag
+	\mc{W}_\text{mirror}^\text{CP(1)}\bigg|_\text{vacuum (2)} & ~~=~~
+		-\, \frac{\Lambda}{4\pi}
+			\lgr -\, \sqrt{ (\Delta m / \Lambda)^2 + 4\, } ~~+~~ 
+			 \frac{\Delta m}{\Lambda}\, \big(\ln\, X^{(1)} ~-~ i\pi \big) \rgr ,
+\end{align}
+	by putting $ \Delta m ~=~ 0 $.
+
+	In the twisted-massive theory, this does not happen anymore. 
+	Special adjustment is needed to place the vacuum values $ \mc{W}_\text{eff} $ on $ Z_N $.
+	I am attaching a picture of the plane of $ \sigma $ as the variable of 
+	the multi-leaf function $ \mc{W}_\text{eff}(\hsigma) $ for CP(2).
+	It would not matter of course in which direction the logarithm branch cuts extend. 
+	It is important however, that an adjustment needed to put the vacuum values of the
+	superpotential on the circle would place the $ \sigma_j $ vacua on 
+	different sheets of the logarithms.
+	It then would be impossible to bring the vacua together, since the origin is not the 
+	common branch point. 
+
+	It seems favorable then that the vacuum values, and correspondingly, the kink
+	masses are determined from Eq.~\eqref{Weff} as it is. 
+	The $ Z_{2N} $ symmetry is realized on the structure of the vacua, and 
+	in the invariance of kink masses.
+	Equation \eqref{w1} is an example of how the vacuum values are related to each other
+	in CP(2),
+\beq
+\label{w1again}
+	\ww (\sigma_1) ~~=~~ e^{2\pi i /3 } \cdot \ww (\sigma_0) ~+~ 2\pi i \cdot m_1\,.
+\eeq
+	The difference of the vacuum values
+\beq
+\label{diffagain}
+	\ww (\sigma_0) \, \Big( e^{2\pi i /3} ~-~ 1 \Big)  ~+~  2\pi i \cdot m_1\,,
+\eeq
+	despite an explicit $ m_1 $, does not necessarily contradict the fact that 
+	the kink masses depend only on the difference between the vacua numbers 
+	$ p \,=\, k \,-\, l $ \cite{Dorey:1999zk}
+	(according to which one would expect to see $ m_1 \,-\, m_0 $), 
+	as the RHS of Eq.~\eqref{diffagain} contains an unevaluated quantity $ \ww (\sigma_0) $.
+	Presumably, if this equation is evaluated, one should be able to see that the kink
+	masses only depend on $ m_k \,-\, m_l $ and $ k - l $
+
+\begin{thebibliography}{99}
+%\cite{Olmez:2007sg}
+\bibitem{Olmez:2007sg}
+  S.~Olmez and M.~Shifman,
+  %``Curves of Marginal Stability in Two-Dimensional CP(N-1) Models with
+  %Z_N-Symmetric Twisted Masses,''
+  J.\ Phys.\ A  {\bf 40}, 11151 (2007)
+  [arXiv:hep-th/0703149].
+  %%CITATION = JPAGB,A40,11151;%%
+
+%\cite{Dorey:1998yh}
+\bibitem{Dorey:1998yh}
+  N.~Dorey,
+  %``The BPS spectra of two-dimensional supersymmetric gauge theories with
+  %twisted mass terms,''
+  JHEP {\bf 9811}, 005 (1998)
+  [arXiv:hep-th/9806056].
+  %%CITATION = JHEPA,9811,005;%%
+
+%\cite{Hanany:1997vm}
+\bibitem{Hanany:1997vm}
+  A.~Hanany and K.~Hori,
+  %``Branes and N = 2 theories in two dimensions,''
+  Nucl.\ Phys.\  B {\bf 513}, 119 (1998)
+  [arXiv:hep-th/9707192].
+  %%CITATION = NUPHA,B513,119;%%
+
+%\cite{Dorey:1999zk}
+\bibitem{Dorey:1999zk}
+  N.~Dorey, T.~J.~Hollowood and D.~Tong,
+  %``The BPS spectra of gauge theories in two and four dimensions,''
+  JHEP {\bf 9905}, 006 (1999)
+  [arXiv:hep-th/9902134].
+  %%CITATION = JHEPA,9905,006;%%
+
+\end{thebibliography}
+
+
+
+\end{document}
+

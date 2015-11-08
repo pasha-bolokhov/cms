@@ -1,0 +1,389 @@
+%\documentclass{article}
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{geometry}
+\geometry{letterpaper}
+
+%\usepackage{showlabels}
+
+\textwidth = 6.0 in
+\textheight = 8.5 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.2 in
+\headheight = 0.0 in
+\headsep = 0.0 in
+%\parskip = 0.05in
+\parindent = 0.35in
+
+
+%% common definitions
+\def\stackunder#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\nn{\nonumber}
+\def\baselinestretch{1.1}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\ba{\beq\new\begin{array}{c}}
+\def\ea{\end{array}\eeq}
+\def\be{\ba}
+\def\ee{\ea}
+\def\stackreb#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\Tr{{\rm Tr}}
+\newcommand{\gsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle>}{\sim}\;$}}
+\newcommand{\lsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle<}{\sim}\;$}}
+%%%%%%%%%%
+\newcommand{\nfour}{${\mathcal N}=4$ }
+\newcommand{\ntwo}{${\mathcal N}=2$ }
+\newcommand{\ntwon}{${\mathcal N}=2$}
+\newcommand{\ntwot}{${\mathcal N}= \left(2,2\right) $ }
+\newcommand{\ntwoo}{${\mathcal N}= \left(0,2\right) $ }
+\newcommand{\ntwoon}{${\mathcal N}= \left(0,2\right) $}
+\newcommand{\none}{${\mathcal N}=1$ }
+%%%%%%%%%%%
+\newcommand{\nonen}{${\mathcal N}=1$}
+\newcommand{\vp}{\varphi}
+\newcommand{\pt}{\partial}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\gs}{g^{2}}
+\newcommand{\qt}{\tilde q}
+%\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+%%
+\newcommand{\p}{\partial}
+\newcommand{\wt}{\widetilde}
+\newcommand{\ov}{\overline}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\md}{\mathcal{D}}
+
+\newcommand{\GeV}{{\rm GeV}}
+\newcommand{\eV}{{\rm eV}}
+\newcommand{\Heff}{{\mathcal{H}_{\rm eff}}}
+\newcommand{\Leff}{{\mathcal{L}_{\rm eff}}}
+\newcommand{\el}{{\rm EM}}
+\newcommand{\uflavor}{\mathbf{1}_{\rm flavor}}
+\newcommand{\lgr}{\left\lgroup}
+\newcommand{\rgr}{\right\rgroup}
+
+\newcommand{\Mpl}{M_{\rm Pl}}
+\newcommand{\suc}{{{\rm SU}_{\rm C}(3)}}
+\newcommand{\sul}{{{\rm SU}_{\rm L}(2)}}
+\newcommand{\sutw}{{\rm SU}(2)}
+\newcommand{\suth}{{\rm SU}(3)}
+\newcommand{\ue}{{\rm U}(1)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Slash character...
+\def\slashed#1{\setbox0=\hbox{$#1$}             % set a box for #1
+   \dimen0=\wd0                                 % and get its size
+   \setbox1=\hbox{/} \dimen1=\wd1               % get size of /
+   \ifdim\dimen0>\dimen1                        % #1 is bigger
+      \rlap{\hbox to \dimen0{\hfil/\hfil}}      % so center / in box
+      #1                                        % and print #1
+   \else                                        % / is bigger
+      \rlap{\hbox to \dimen1{\hfil$#1$\hfil}}   % so center #1
+      /                                         % and print /
+   \fi}                                         %
+%%EXAMPLE:  $\slashed{E}$ or $\slashed{E}_{t}$
+
+%%
+
+\newcommand{\LN}{\Lambda_\text{SU($N$)}}
+\newcommand{\sunu}{{\rm SU($N$) $\times$ U(1) }}
+\newcommand{\sunun}{{\rm SU($N$) $\times$ U(1)}}
+\def\cfl {$\text{SU($N$)}_{\rm C+F}$ }
+\def\cfln {$\text{SU($N$)}_{\rm C+F}$}
+\newcommand{\mUp}{m_{\rm U(1)}^{+}}
+\newcommand{\mUm}{m_{\rm U(1)}^{-}}
+\newcommand{\mNp}{m_\text{SU($N$)}^{+}}
+\newcommand{\mNm}{m_\text{SU($N$)}^{-}}
+\newcommand{\AU}{\mc{A}^{\rm U(1)}}
+\newcommand{\AN}{\mc{A}^\text{SU($N$)}}
+\newcommand{\aU}{a^{\rm U(1)}}
+\newcommand{\aN}{a^\text{SU($N$)}}
+\newcommand{\baU}{\ov{a}{}^{\rm U(1)}}
+\newcommand{\baN}{\ov{a}{}^\text{SU($N$)}}
+\newcommand{\lU}{\lambda^{\rm U(1)}}
+\newcommand{\lN}{\lambda^\text{SU($N$)}}
+%\newcommand{\Tr}{{\rm Tr\,}}
+\newcommand{\bxir}{\ov{\xi}{}_R}
+\newcommand{\bxil}{\ov{\xi}{}_L}
+\newcommand{\xir}{\xi_R}
+\newcommand{\xil}{\xi_L}
+\newcommand{\bzl}{\ov{\zeta}{}_L}
+\newcommand{\bzr}{\ov{\zeta}{}_R}
+\newcommand{\zr}{\zeta_R}
+\newcommand{\zl}{\zeta_L}
+\newcommand{\nbar}{\ov{n}}
+
+\newcommand{\ssm}{{\scriptscriptstyle(M)}}
+\newcommand{\sse}{{\scriptscriptstyle(E)}}
+\newcommand{\cell}{{\mathcal L}}
+\newcommand{\CPC}{CP($N-1$)$\times$C }
+\newcommand{\CPCn}{CP($N-1$)$\times$C}
+\newcommand{\cpn}{CP$(N-1)\,$}
+
+\newcommand{\lar}{\lambda_R}
+\newcommand{\lal}{\lambda_L}
+\newcommand{\larl}{\lambda_{R,L}}
+\newcommand{\lalr}{\lambda_{L,R}}
+\newcommand{\blar}{\ov{\lambda}{}_R}
+\newcommand{\blal}{\ov{\lambda}{}_L}
+\newcommand{\blarl}{\ov{\lambda}{}_{R,L}}
+\newcommand{\blalr}{\ov{\lambda}{}_{L,R}}
+
+\newcommand{\tgamma}{\wt{\gamma}}
+\newcommand{\btgamma}{\ov{\tgamma}}
+\newcommand{\bpsi}{\ov{\psi}{}}
+\newcommand{\bphi}{\ov{\phi}{}}
+\newcommand{\bxi}{\ov{\xi}{}}
+
+\newcommand{\ff}{\mc{F}}
+\newcommand{\bff}{\ov{\mc{F}}}
+
+\newcommand{\eer}{\epsilon_R}
+\newcommand{\eel}{\epsilon_L}
+\newcommand{\eerl}{\epsilon_{R,L}}
+\newcommand{\eelr}{\epsilon_{L,R}}
+\newcommand{\beer}{\ov{\epsilon}{}_R}
+\newcommand{\beel}{\ov{\epsilon}{}_L}
+\newcommand{\beerl}{\ov{\epsilon}{}_{R,L}}
+\newcommand{\beelr}{\ov{\epsilon}{}_{L,R}}
+
+\newcommand{\bi}{{\bar \imath}}
+\newcommand{\bj}{{\bar \jmath}}
+\newcommand{\bk}{{\bar k}}
+\newcommand{\bl}{{\bar l}}
+\newcommand{\bm}{{\bar m}}
+
+\newcommand{\hsigma}{{\hat{\sigma}}}
+
+\begin{document}
+
+{\centering\bf
+\large\underline{A note on CMS curve in supersymmetric CP($N-1$) model}}
+
+%\vspace{1.5cm}
+\section*{Remark on Argyres-Douglas points}
+	If one considers a generic CP($N-1$) with twisted masses $m_j$, the latter would not have to be
+situated on a circle, although, of course, that would be helpful for calculations. 
+	If the situation with collision of a few vacua is to be investigated, one effectively arrives
+at a theory CP($n-1$) where $n$ is the number of colliding vacua, two or more. 
+	In such an effective description, now all of the vacua of CP($n-1$) are colliding. 
+We then just assume that $ n = N $.
+
+	If all $N$ vacua collide, then there is no other way than all corresponding masses
+have to sit on the circle. 
+	Whether the masses have not been distributed on a $Z_N$ circle initially, they will
+become so. For now we adopt that the masses were on the circle at all times.
+
+\section*{Massive CP(1)}
+
+	The simplest example to consider is CP(1). 
+The two masses $m_j$ are of the opposite sign, and so are the vacua $\sigma_j$.
+If one starts from the effective superpotential
+\beq
+\label{Wexact}
+	-2\, \mc{W}_\text{eff} (\hsigma) ~~=~~ i\, \tau\hsigma ~-~ 
+		\frac{1}{2\pi} \sum_j (\hsigma - m_j)\, 
+				      \left\{ \ln {\frac{\hsigma - m_j}{\mu}} ~-~ 1 \right\}\,,
+\eeq
+one finds for the vacuum values, 
+\beq
+	\mc{W}_\text{eff} (\sigma_p) ~~=~~ -\, \frac{N}{4\pi}\,\sigma_p ~-~
+				\frac{1}{4\pi} \sum_j m_j\, \ln \frac{\sigma_p - m_j}{\mu}\,,
+\eeq
+or, since the sum of the masses can be set to zero,
+\beq
+\label{vvalue}
+	\mc{W}_\text{eff} (\sigma_p) ~~=~~ -\, \frac{N}{4\pi}\,\sigma_p ~-~
+				\frac{1}{4\pi} \sum_j m_j\, \ln ( \sigma_p - m_j ) \,.
+\eeq
+	Superpotential \eqref{Wexact} can be rewritten as
+\beq
+	\mc{W}_\text{eff} (\hsigma) ~~=~~-\, \frac{1}{2}i \left(\frac{\theta}{2\pi}\right)\, \hsigma ~+~
+		\frac{1}{4\pi} \sum_j (\hsigma - m_j)\, 
+					\left\{ \ln \frac{\hsigma - m_j}{\Lambda} ~-~ 1 \right\}\,,
+\eeq
+	via
+\beq
+	\mu ~~=~~ \Lambda\, e^{2\pi r/N}   
+	\qquad\qquad \text{and} \qquad\qquad
+	\tau ~~=~~ i r ~+~ \frac{\theta}{2\pi}\,.
+\eeq
+	We, of course, will set $ \theta $ angle to zero, and so
+\beq
+\label{Weff}
+	\mc{W}_\text{eff} (\hsigma) ~~=~~ \frac{1}{4\pi} \sum_j (\hsigma - m_j)\, 
+					  \left\{ \ln \frac{\hsigma - m_j}{\Lambda} ~-~ 1 \right\}\,.
+\eeq
+
+	This has been valid for arbitrary $N$, let us now take $N$ equal to 2.
+	Consider now the relative position of the vacuum values \eqref{vvalue} in CP(1). 
+	Take mass $ m_1 $ large and positive, and then $ m_{-1} $ will be large and negative. 
+	The vacua $ \sigma_1 $ and $ \sigma_{-1} $ are also large. 
+	The vacuum values are
+\begin{align}
+%
+\notag
+	\mc{W}(\sigma_1) & ~~=~~ \frac{m}{2\pi}\,
+			\Biggl\lgroup \ln\, \frac{2m}{\Lambda}  ~-~ 1 ~-~ \Big(\frac{\Lambda}{2m}\Big)^2 
+			              ~+~ ... \Biggr\rgroup ,
+	\\
+%
+\label{positivem}
+	\mc{W}(\sigma_{-1}) & ~~=~~ - \mc{W}(\sigma_1) ~-~
+			i\pi\, \frac{m}{2\pi}\, 
+			\Biggl\lgroup 1 ~+~ 2\,\Big( \frac{\Lambda}{2m} \Big)^2 \Biggr\rgroup .
+\end{align}
+	The last term in the second line of \eqref{positivem} prevents the vacuum values to be of the
+	opposite sign.
+	However, quite generally, the logarithms in Eq.~\eqref{Weff} could have additions 
+	proportional to integer numbers of $ 2\pi i $.
+	Let us, in a very general setting, account for these ambiguities.
+	Then, ignoring $(\Lambda/2m)^2$ corrections, it is possible 
+	to cancel the last term on the second line of Eq.~\eqref{positivem}, by the appropriate choice of 
+	integer numbers times $ 2\pi i\, m_j $.
+	We could {\it define} the vacuum value $\mc{W}(\sigma_{-1})$ such that it is the exact opposite
+	of $\mc{W}(\sigma_1)$.
+	But, again, in expression \eqref{positivem} it is not such.
+
+	
+	Now let us approach the two-dimensional Argyres-Douglas point, which in this case is 
+$ m_j \,=\, \{\, -i \Lambda,\, +i \Lambda \,\} $. 
+	For the moment we ignore the issue of branching of the logarithms, as we are currently interested
+	in the absolute value of $ \mc{W}(\sigma_p) $.
+	Then we can just set $ \sigma \to 0 $, and, substituting the masses into expression \eqref{vvalue},
+	we obtain,
+\beq
+\label{vaccp1}
+	\mc{W}_\text{eff}(\sigma_1) ~~=~~ -\, \frac{1}{4\pi}\, \sum_j m_j\, \ln(-m_j)  ~~=~~ 
+			-\, \frac{1}{4\pi}\cdot \pi\, \Lambda \,.
+\eeq
+	One can formally calculate $ \mc{W}_\text{eff}(\sigma_{-1}) $ by pulling out the factor of $ e^{2\pi i / 2} $ from
+	the logarithms in Eq.~\eqref{vvalue}, and this way expressing the value in terms of $ \mc{W}_\text{eff}(\sigma_1) $.
+	One still has to put $ \sigma $ to zero after this process, and, by correctly taking into account the phases of the
+	logarithms now,
+\beq
+\label{relvalcp1}
+	\mc{W}_\text{eff}(\sigma_{-1}) ~~=~~ -\, \mc{W}_\text{eff}(\sigma_1) ~~+~~ \frac{1}{2}\, \Lambda \,,
+\eeq	
+	which is consistent with \eqref{vaccp1} if we set $ \mc{W}_\text{eff}(\sigma_1) = \mc{W}_\text{eff}(\sigma_{-1}) $.
+	Then one has massless states in the Argyres-Douglas point, and the latter lies on the CMS. 
+
+	Expressions \eqref{vaccp1} and \eqref{relvalcp1} are not consistent with the superpotential values to be of the opposite sign.
+	For, if they were of the opposite sign, their values would have to vanish in order for the model to have
+	massless states at the Argyres-Douglas point. 
+	The $ Z_N $ property, however, can be enforced by choosing the appropriate branches of the logarithms in
+	\eqref{vvalue}. 
+	Then one can set $ \mc{W}_\text{eff}(\sigma_1) = - \mc{W}_\text{eff}(\sigma_{-1}) = 0 $, and there are massless states.
+
+\section*{Massless CP({\boldmath $N-1$})}
+
+	In the massless theory, $Z_N$ property is evident from \eqref{vvalue},
+\beq
+	\mc{W}(\sigma_p) ~~=~~ -\, \frac{N}{4\pi}\, \sigma_p \,.
+\eeq
+	The vacua are found from minimization of the potential,
+\beq
+\label{Vmassless}
+	V ~~\propto~~ \left|\, \wt{\tau} ~-~ \frac{N}{2\pi i}\, \ln\, \sigma/\mu \,\right|^2\,.
+\eeq
+	Here 
+\beq
+\label{twtau}
+	\wt{\tau} ~~=~~ \tau ~+~ n^*\,,
+\eeq	
+	where $ n^* \in {\mc Z} $ is found from minimizing the absolute value of the effective $\theta$-angle
+\beq	
+	\left|\, \frac{\theta}{2\pi} ~-~ \frac{N}{2\pi}\, {\rm Arg}\, \sigma ~+~ n^* \,\right| \,.
+\eeq
+	Then (if we set $\theta = 0$) the vacua are
+\beq
+	\sigma_k ~~=~~ \Lambda\, e^{2\pi i k / N}\,,
+\eeq
+	as for each value of $k$ there will be the corresponding $ n^* ~=~ k $.
+	The RHS of \eqref{Vmassless} can be written as
+\beq
+	\left|\, \frac{\wt{\theta}}{2\pi} ~-~ \frac{N}{2\pi i}\, \ln\, \sigma/\Lambda   \,\right|^2 \,,
+\eeq
+	with $ \wt{\theta} $ from $ \eqref{twtau} $, and obviously vanishes in the vacua.
+
+\section*{CP(1) in the Mirror Representation}
+
+	We can look at what superpotential values look like in the mirror representation.
+	One has,
+\beq
+	\mc{W}_\text{mirror}^\text{CP(1)} ~~=~~
+		-\, \frac{\Lambda}{4\pi} 
+			\lgr  ( X + \frac{1}{X} ) ~-~
+			      \left\{ \frac{m_1}{\Lambda}\, \ln\, X ~+~
+				      \frac{m_2}{\Lambda}\, \ln\, \frac{1}{X} \right\} \rgr.
+\eeq
+	Let us take masses $ m_1 $ and $ m_2 $ of the opposite sign, and approach the CMS.
+	Denoting with $ X^{(1)} $ and $ X^{(2)} $ the possible vacua, for the vacuum values we find
+\begin{align}
+%
+\label{mirrvv}
+	\mc{W}_\text{mirror}^\text{CP(1)}\bigg|_\text{vacuum (1)} & ~~=~~
+		-\, \frac{\Lambda}{4\pi} 
+			\lgr \sqrt{ (\Delta m / \Lambda)^2 + 4\, } ~~-~~ \frac{\Delta m}{\Lambda}\, \ln\, X^{(1)} \rgr,
+	\\
+%
+\notag
+	\mc{W}_\text{mirror}^\text{CP(1)}\bigg|_\text{vacuum (2)} & ~~=~~
+		-\, \frac{\Lambda}{4\pi}
+			\lgr -\, \sqrt{ (\Delta m / \Lambda)^2 + 4\, } ~~+~~ 
+			 \frac{\Delta m}{\Lambda}\, \big(\ln\, X^{(1)} ~-~ i\pi \big) \rgr ,
+\end{align}
+	with
+\beq
+\label{mirrv}
+	X^{(1,2)} ~~=~~  \frac{\,  \Delta m / \Lambda \,\pm\, \sqrt{ (\Delta m / \Lambda)^2 + 4\, } \,}
+                                                      {  2  }\,.
+\eeq
+	Equations \eqref{mirrvv} and \eqref{mirrv} are valid for any masses --- small, opposite sign or not.
+	As long as they are inside the CMS, one can compare the vacuum values in \eqref{mirrvv}.
+	In particular, one can take $ \Delta m \,\sim\, \Lambda $ to approach the CMS,
+	then $ X^{(1,2)} \,\sim\, 1 $ and so are $ \ln\, X^{(1)} $ and $ \ln\, X^{(2)} $.
+
+
+\begin{thebibliography}{99}
+%\cite{Olmez:2007sg}
+\bibitem{Olmez:2007sg}
+  S.~Olmez and M.~Shifman,
+  %``Curves of Marginal Stability in Two-Dimensional CP(N-1) Models with
+  %Z_N-Symmetric Twisted Masses,''
+  J.\ Phys.\ A  {\bf 40}, 11151 (2007)
+  [arXiv:hep-th/0703149].
+  %%CITATION = JPAGB,A40,11151;%%
+
+%\cite{Dorey:1998yh}
+\bibitem{Dorey:1998yh}
+  N.~Dorey,
+  %``The BPS spectra of two-dimensional supersymmetric gauge theories with
+  %twisted mass terms,''
+  JHEP {\bf 9811}, 005 (1998)
+  [arXiv:hep-th/9806056].
+  %%CITATION = JHEPA,9811,005;%%
+
+%\cite{Hanany:1997vm}
+\bibitem{Hanany:1997vm}
+  A.~Hanany and K.~Hori,
+  %``Branes and N = 2 theories in two dimensions,''
+  Nucl.\ Phys.\  B {\bf 513}, 119 (1998)
+  [arXiv:hep-th/9707192].
+  %%CITATION = NUPHA,B513,119;%%
+
+\end{thebibliography}
+
+
+
+\end{document}
+

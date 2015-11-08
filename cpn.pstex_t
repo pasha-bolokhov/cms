@@ -1,0 +1,43 @@
+\begin{picture}(0,0)%
+\includegraphics{cpn.pstex}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(8516,7137)(2679,-7283)
+\put(7506,-4304){\makebox(0,0)[lb]{\smash{{\SetFigFont{29}{34.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ e^{\scriptscriptstyle -i\pi/N} $}%
+}}}}
+\put(6978,-2969){\makebox(0,0)[lb]{\smash{{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\boldmath{$\star$}}%
+}}}}
+\put(7353,-4372){\makebox(0,0)[lb]{\smash{{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\boldmath{$\star$}}%
+}}}}
+\put(6982,-5026){\makebox(0,0)[lb]{\smash{{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\boldmath{$\star$}}%
+}}}}
+\put(6335,-5399){\makebox(0,0)[lb]{\smash{{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\boldmath{$\star$}}%
+}}}}
+\put(6325,-2591){\makebox(0,0)[lb]{\smash{{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\boldmath{$\star$}}%
+}}}}
+\put(5571,-2586){\makebox(0,0)[lb]{\smash{{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\boldmath{$\star$}}%
+}}}}
+\put(4925,-2968){\makebox(0,0)[lb]{\smash{{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\boldmath{$\star$}}%
+}}}}
+\put(4546,-3615){\makebox(0,0)[lb]{\smash{{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\boldmath{$\star$}}%
+}}}}
+\put(4546,-4374){\makebox(0,0)[lb]{\smash{{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\boldmath{$\star$}}%
+}}}}
+\put(4919,-5025){\makebox(0,0)[lb]{\smash{{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\boldmath{$\star$}}%
+}}}}
+\put(5576,-5398){\makebox(0,0)[lb]{\smash{{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\boldmath{$\star$}}%
+}}}}
+\put(7356,-3619){\makebox(0,0)[lb]{\smash{{\SetFigFont{9}{10.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\boldmath{$\star$}}%
+}}}}
+\put(9991,-706){\makebox(0,0)[lb]{\smash{{\SetFigFont{29}{34.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ m_{\scriptscriptstyle 0} $}%
+}}}}
+\put(7434,-3416){\makebox(0,0)[lb]{\smash{{\SetFigFont{29}{34.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ e^{\scriptscriptstyle i\pi/N} $}%
+}}}}
+\end{picture}%

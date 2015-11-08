@@ -1,0 +1,21 @@
+\begin{picture}(0,0)%
+\includegraphics{contour_m0.pstex}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(8834,7844)(2379,-7883)
+\put(5071,-5611){\makebox(0,0)[lb]{\smash{{\SetFigFont{29}{34.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ - i \Lambda $}%
+}}}}
+\put(9361,-7103){\makebox(0,0)[lb]{\smash{{\SetFigFont{29}{34.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ | m_{\scriptscriptstyle 0} | \gg \Lambda $}%
+}}}}
+\put(9991,-706){\makebox(0,0)[lb]{\smash{{\SetFigFont{29}{34.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ m_{\scriptscriptstyle 0} $}%
+}}}}
+\put(5401,-2596){\makebox(0,0)[lb]{\smash{{\SetFigFont{29}{34.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ i \Lambda $}%
+}}}}
+\end{picture}%

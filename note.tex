@@ -1,0 +1,327 @@
+%\documentclass{article}
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{geometry}
+\geometry{letterpaper}
+
+\usepackage{showlabels}
+
+\textwidth = 6.0 in
+\textheight = 8.5 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.2 in
+\headheight = 0.0 in
+\headsep = 0.0 in
+%\parskip = 0.05in
+\parindent = 0.35in
+
+
+%% common definitions
+\def\stackunder#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\nn{\nonumber}
+\def\baselinestretch{1.1}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\ba{\beq\new\begin{array}{c}}
+\def\ea{\end{array}\eeq}
+\def\be{\ba}
+\def\ee{\ea}
+\def\stackreb#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\Tr{{\rm Tr}}
+\newcommand{\gsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle>}{\sim}\;$}}
+\newcommand{\lsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle<}{\sim}\;$}}
+%%%%%%%%%%
+\newcommand{\nfour}{${\mathcal N}=4$ }
+\newcommand{\ntwo}{${\mathcal N}=2$ }
+\newcommand{\ntwon}{${\mathcal N}=2$}
+\newcommand{\ntwot}{${\mathcal N}= \left(2,2\right) $ }
+\newcommand{\ntwoo}{${\mathcal N}= \left(0,2\right) $ }
+\newcommand{\ntwoon}{${\mathcal N}= \left(0,2\right) $}
+\newcommand{\none}{${\mathcal N}=1$ }
+%%%%%%%%%%%
+\newcommand{\nonen}{${\mathcal N}=1$}
+\newcommand{\vp}{\varphi}
+\newcommand{\pt}{\partial}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\gs}{g^{2}}
+\newcommand{\qt}{\tilde q}
+%\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+%%
+\newcommand{\p}{\partial}
+\newcommand{\wt}{\widetilde}
+\newcommand{\ov}{\overline}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\md}{\mathcal{D}}
+
+\newcommand{\GeV}{{\rm GeV}}
+\newcommand{\eV}{{\rm eV}}
+\newcommand{\Heff}{{\mathcal{H}_{\rm eff}}}
+\newcommand{\Leff}{{\mathcal{L}_{\rm eff}}}
+\newcommand{\el}{{\rm EM}}
+\newcommand{\uflavor}{\mathbf{1}_{\rm flavor}}
+\newcommand{\lgr}{\left\lgroup}
+\newcommand{\rgr}{\right\rgroup}
+
+\newcommand{\Mpl}{M_{\rm Pl}}
+\newcommand{\suc}{{{\rm SU}_{\rm C}(3)}}
+\newcommand{\sul}{{{\rm SU}_{\rm L}(2)}}
+\newcommand{\sutw}{{\rm SU}(2)}
+\newcommand{\suth}{{\rm SU}(3)}
+\newcommand{\ue}{{\rm U}(1)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Slash character...
+\def\slashed#1{\setbox0=\hbox{$#1$}             % set a box for #1
+   \dimen0=\wd0                                 % and get its size
+   \setbox1=\hbox{/} \dimen1=\wd1               % get size of /
+   \ifdim\dimen0>\dimen1                        % #1 is bigger
+      \rlap{\hbox to \dimen0{\hfil/\hfil}}      % so center / in box
+      #1                                        % and print #1
+   \else                                        % / is bigger
+      \rlap{\hbox to \dimen1{\hfil$#1$\hfil}}   % so center #1
+      /                                         % and print /
+   \fi}                                        %
+
+%%EXAMPLE:  $\slashed{E}$ or $\slashed{E}_{t}$
+
+%%
+
+\newcommand{\LN}{\Lambda_\text{SU($N$)}}
+\newcommand{\sunu}{{\rm SU($N$) $\times$ U(1) }}
+\newcommand{\sunun}{{\rm SU($N$) $\times$ U(1)}}
+\def\cfl {$\text{SU($N$)}_{\rm C+F}$ }
+\def\cfln {$\text{SU($N$)}_{\rm C+F}$}
+\newcommand{\mUp}{m_{\rm U(1)}^{+}}
+\newcommand{\mUm}{m_{\rm U(1)}^{-}}
+\newcommand{\mNp}{m_\text{SU($N$)}^{+}}
+\newcommand{\mNm}{m_\text{SU($N$)}^{-}}
+\newcommand{\AU}{\mc{A}^{\rm U(1)}}
+\newcommand{\AN}{\mc{A}^\text{SU($N$)}}
+\newcommand{\aU}{a^{\rm U(1)}}
+\newcommand{\aN}{a^\text{SU($N$)}}
+\newcommand{\baU}{\ov{a}{}^{\rm U(1)}}
+\newcommand{\baN}{\ov{a}{}^\text{SU($N$)}}
+\newcommand{\lU}{\lambda^{\rm U(1)}}
+\newcommand{\lN}{\lambda^\text{SU($N$)}}
+%\newcommand{\Tr}{{\rm Tr\,}}
+\newcommand{\bxir}{\ov{\xi}{}_R}
+\newcommand{\bxil}{\ov{\xi}{}_L}
+\newcommand{\xir}{\xi_R}
+\newcommand{\xil}{\xi_L}
+\newcommand{\bzl}{\ov{\zeta}{}_L}
+\newcommand{\bzr}{\ov{\zeta}{}_R}
+\newcommand{\zr}{\zeta_R}
+\newcommand{\zl}{\zeta_L}
+\newcommand{\nbar}{\ov{n}}
+
+\newcommand{\ssm}{{\scriptscriptstyle(M)}}
+\newcommand{\sse}{{\scriptscriptstyle(E)}}
+\newcommand{\cell}{{\mathcal L}}
+\newcommand{\CPC}{CP($N-1$)$\times$C }
+\newcommand{\CPCn}{CP($N-1$)$\times$C}
+\newcommand{\cpn}{CP$(N-1)\,$}
+
+\newcommand{\lar}{\lambda_R}
+\newcommand{\lal}{\lambda_L}
+\newcommand{\larl}{\lambda_{R,L}}
+\newcommand{\lalr}{\lambda_{L,R}}
+\newcommand{\blar}{\ov{\lambda}{}_R}
+\newcommand{\blal}{\ov{\lambda}{}_L}
+\newcommand{\blarl}{\ov{\lambda}{}_{R,L}}
+\newcommand{\blalr}{\ov{\lambda}{}_{L,R}}
+
+\newcommand{\tgamma}{\wt{\gamma}}
+\newcommand{\btgamma}{\ov{\tgamma}}
+\newcommand{\bpsi}{\ov{\psi}{}}
+\newcommand{\bphi}{\ov{\phi}{}}
+\newcommand{\bxi}{\ov{\xi}{}}
+
+\newcommand{\ff}{\mc{F}}
+\newcommand{\bff}{\ov{\mc{F}}}
+
+\newcommand{\eer}{\epsilon_R}
+\newcommand{\eel}{\epsilon_L}
+\newcommand{\eerl}{\epsilon_{R,L}}
+\newcommand{\eelr}{\epsilon_{L,R}}
+\newcommand{\beer}{\ov{\epsilon}{}_R}
+\newcommand{\beel}{\ov{\epsilon}{}_L}
+\newcommand{\beerl}{\ov{\epsilon}{}_{R,L}}
+\newcommand{\beelr}{\ov{\epsilon}{}_{L,R}}
+
+\newcommand{\bi}{{\bar \imath}}
+\newcommand{\bj}{{\bar \jmath}}
+\newcommand{\bk}{{\bar k}}
+\newcommand{\bl}{{\bar l}}
+\newcommand{\bm}{{\bar m}}
+
+\begin{document}
+
+{\centering
+\large\underline{A note on AD point vs. CMS curve in supersymmetric CP($N-1$) model}}
+
+\vspace{1.5cm}
+The effective superpotential in the mirror representation reads \cite{Olmez:2007sg,Dorey:1998yh}
+\beq
+\label{Wgen}
+	\mc{W}(\sigma) ~~=~~ \frac{N}{4\pi}  
+		\lgr  \sigma ~-~ \frac{1}{N}\, \sum m_j\, \ln ( \sigma \;+\; m_j ) \rgr .
+\eeq
+Its vacua are located at
+\beq
+\label{sigmap}
+	\sigma_{(p)} ~~=~~ \sqrt[N]{ 1 \,+\,  (- m_0)^N }\, e^{2\pi i p / N}\,.
+\eeq
+
+Both the vacua $ \sigma_{(p)} $ and the masses $ m_j $ satisfy the $ Z_N $ symmetry. 
+The Argyres-Douglas point is, therefore when all $ \sigma $'s vanish:
+\beq
+	\sigma_0  ~~=~~ \sigma_{(p)} ~~=~~ \dots ~~=~~ 0\, \qquad\qquad \forall~ p.
+\eeq
+
+The CMS condition is the equality of the phases of the fundamental and topological masses,
+\beq
+	Z  ~~=~~ -i \lgr   (m_k ~-~ m_l )  ~~+~~ (m_D^{(k)} ~-~ m_D^{(l)}) \rgr,
+\eeq
+where the latter are
+\beq
+	m_D^{(k)} ~~=~~ 2i\, \mc{W}(\sigma_{(k)})\,,
+\eeq
+and, therefore
+\beq
+\label{Z}
+	Z  ~~=~~ -i \lgr (m_k ~-~ m_l )  ~~+~~ 2i\, \left\{ \mc{W}(\sigma_{(k)}) ~-~ \mc{W}(\sigma_{(l)}) \right\} \rgr.
+\eeq
+
+It seems that, as $ \sigma \to 0 $, the topological part of \eqref{Z} goes to zero and the equality of
+phases --- {\it i.e.} the CMS condition --- is satisfied.
+
+However, equation \eqref{Wgen} for $\mc{W}(\sigma)$ does not mean that literally
+\[
+	\mc{W}(\sigma_{(p)}) ~~=~~ \frac{N}{4\pi}  
+		\lgr  \sigma_{(p)} ~-~ \frac{1}{N}\, \sum m_j\, \ln ( \sigma_{(p)} \;+\; m_j ) \rgr ,
+\]
+as in general, each logarithm has a cut and admits an addition of $ 2\pi i $ times an integer. 
+The latter integer constants are fixed by imposing the $ Z_N $ symmetry on the vacuum values of the superpotential,
+\beq
+\label{WZN}
+	\mc{W}(\sigma_{(p)}) ~~=~~ e^{2\pi i p/N}\, \mc{W}(\sigma_0) \,,
+\eeq
+{\it i.e.} the vacuum values also sit on the circle. 
+The vacuum values therefore could only cancel in \eqref{Z} if this circle shrinks to zero, which does not
+happen. 
+
+The value $ \mc{W}(\sigma_{(p)}) $ can be related to the value in the zeroth vacuum 
+$ \mc{W}(\sigma_0) $ as in \cite{Olmez:2007sg}, by substituting 
+\[
+	\sigma_{(p)} ~~=~~ e^{2\pi i p/N}\, \sigma_0\,.
+\]
+However, analysis of branch cuts of the logarithms shows that in this case
+\[
+	\mc{W}(\sigma_{(p)})  ~~\neq~~   e^{2\pi i p/N}\, \mc{W}(\sigma_0)
+\]
+if $ \mc{W}(\sigma) $ is just taken literally from Eq.~\eqref{Wgen}. The above expression is understood
+to be taken in the limit $ |\sigma_0| \to 0 $, {\it i.e.} near the AD point.
+
+The limit of the AD point is useful, since then one can correctly neglect the phases of the $ \sigma $'s in
+the logarithms  ($ \arg (\sigma + m_j) ~\approx~ \arg m_j $), and analyse which of the logarithms
+may exceed their branch cuts. Imposition of $Z_N$ symmetry then demands to cancel the corresponding
+constants that pop out. 
+The result is, 
+\begin{align}
+%
+\notag
+	\text{true}~ \mc{W}(\sigma_{(p)})  & ~~=~~ 
+		\frac{N}{4\pi}  
+		\lgr  \sigma_{(p)} ~-~ \frac{1}{N}\, \sum m_j\, \ln ( \sigma_{(p)} \;+\; m_j ) \rgr 
+	~+~ \\
+%
+\label{Wtrue}
+	&
+\qquad
+	~~+~~
+	\frac{i}{2} \left\{
+	\begin{array}{ll}
+		  {\displaystyle \sum_{ j > n - |p|}^{n}}\,  ( -m_j)\,, &  p < 0 \\
+			\\
+		  {\displaystyle \sum_{j=-n}^{j<-n + p}}\,   m_j\,, &  p > 0
+	\end{array}
+	\right.,
+	\\
+%
+\notag
+	& [\lim~ \sigma_0~ \to~ 0]\,,  \\
+%
+\notag
+	& [\text{for CP($N-1$) with {\it odd} $N$}].
+\end{align}
+The above equation is meant to apply in the limit where masses $ m_j $ approach the AD point $ \sigma_0 = 0 $
+(therefore, one can simply throw away the $ \sigma $'s on the RHS of \eqref{Wtrue}).
+This equation is derived for the case of odd $N$.
+On one hand, Eq.~\eqref{Wtrue} restores the $ Z_N $ symmetry, on the other hand, it allows to efficiently
+compare the vacuum values of the superpotential (at least in the AD point).
+
+The conventions for the masses and vacua in Eq.~\eqref{Wtrue} are as follows: masses are numbered as
+$ -(N-1)/2$, ..., $0$, ..., $+(N-1)/2 $, with the same numbering for the vacua $ \sigma_{(p)} $. Therefore,
+$ m_0 $ and $ \sigma_0 $ are real and positive. The cuts of each logarithm in \eqref{Wgen} are assumed to
+be directed in the real negative direction, with the phase of the argument varying from 
+$ - i \pi $ to $ + i \pi $.
+
+
+Equation \eqref{Wtrue} means that for the $p$-th vacuum, $ p $ masses have to be added 
+(or subtracted, depending on the sign of $p$) to the initial expression \eqref{Wgen}. 
+Again, it was derived for the case of odd $N$, when both $ m_0 $ and $ \sigma_0 $ can be made real.
+[But the confidence is that a very similar result holds for {\it even} $N$ as well --- $ p $
+masses have to be added. The following discussion was not peformed for even $N$, however].
+
+Using Eq.~\eqref{Wtrue} it is easy to show that for theory with odd $N$ the phase of 
+$ m_D^{(k)} - m_D^{(l)} $ in the limit $ \sigma_0 \to 0 $ always differs from the 
+phase of $ m^k - m^l $ by a factor of $ i $, and therefore they can never be made equal. 
+Therefore, the AD point does not lie on the CMS.
+
+On the other hand, for CP(1) theory ($N = 2$), this does not happen. 
+The masses $m_j$ are imaginary at the AD point (see Eq.~\eqref{sigmap}), 
+\[
+	m_{(1)}  ~~\to~~ i\,, \qquad\qquad  m_{(-1)}  ~~\to~~  -i\,,
+\]
+while the superpotential is real (the sum of imaginary masses times their logarithms),
+\[
+	\mc{W}(\sigma_{(1)})  ~~=~~ - \mc{W}(\sigma_{(-1)}) ~~\in~~ \mc{R}\,.
+\]
+The extra factor of $ 2i $ in Eq.~\eqref{Z} therefore balances the phases, and the AD point
+is on the CMS. 
+What happens in general CP($N-1$) with even $N = 2 m$ remains to be seen.
+
+
+\begin{thebibliography}{99}
+%\cite{Olmez:2007sg}
+\bibitem{Olmez:2007sg}
+  S.~Olmez and M.~Shifman,
+  %``Curves of Marginal Stability in Two-Dimensional CP(N-1) Models with
+  %Z_N-Symmetric Twisted Masses,''
+  J.\ Phys.\ A  {\bf 40}, 11151 (2007)
+  [arXiv:hep-th/0703149].
+  %%CITATION = JPAGB,A40,11151;%%
+
+%\cite{Dorey:1998yh}
+\bibitem{Dorey:1998yh}
+  N.~Dorey,
+  %``The BPS spectra of two-dimensional supersymmetric gauge theories with
+  %twisted mass terms,''
+  JHEP {\bf 9811}, 005 (1998)
+  [arXiv:hep-th/9806056].
+  %%CITATION = JHEPA,9811,005;%%
+
+\end{thebibliography}
+
+
+
+\end{document}
+

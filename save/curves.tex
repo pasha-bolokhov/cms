@@ -1,0 +1,886 @@
+\documentclass[epsfig,12pt]{article}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{rotating}
+
+%%%%%%%%%
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{geometry}
+\geometry{letterpaper}
+\usepackage{color}
+\usepackage{bm}
+\usepackage{showlabels}
+%%%%%%%%%%%%
+
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\Tr{{\rm Tr}}
+\newcommand{\nfour}{${\cal N}=4\;$}
+\newcommand{\ntwo}{${\mathcal N}=2\,$}
+\newcommand{\none}{${\mathcal N}=1\,$}
+\newcommand{\ntt}{${\mathcal N}=(2,2)\,$}
+\newcommand{\nzt}{${\mathcal N}=(0,2)\,$}
+\newcommand{\cpn}{CP$(N-1)\,$}
+\newcommand{\ca}{{\mathcal A}}
+\newcommand{\cell}{{\mathcal L}}
+\newcommand{\cw}{{\mathcal W}}
+\newcommand{\cs}{{\mathcal S}}
+\newcommand{\vp}{\varphi}
+\newcommand{\pt}{\partial}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\gs}{g^{2}}
+\newcommand{\zn}{$Z_N$}
+\newcommand{\cd}{${\mathcal D}$}
+\newcommand{\cde}{{\mathcal D}}
+\newcommand{\cf}{${\mathcal F}$}
+\newcommand{\cfe}{{\mathcal F}}
+
+\newcommand{\gsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle>}{\sim}\;$}}
+\newcommand{\lsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle<}{\sim}\;$}}
+
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+%%%%%%%%%%%%%
+%%%%%%%%%%%
+%% common definitions
+\def\stackunder#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\nn{\nonumber}
+\def\baselinestretch{1.1}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\ba{\beq\new\begin{array}{c}}
+\def\ea{\end{array}\eeq}
+\def\be{\ba}
+\def\ee{\ea}
+\def\stackreb#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\Tr{{\rm Tr}}
+%\newcommand{\gsim}{\lower.7ex\hbox{$\;\stackrel{\textstyle>}{\sim}\;$}}
+% \newcommand{\lsim}{\lower.7ex\hbox{$
+%\;\stackrel{\textstyle<}{\sim}\;$}}
+%\newcommand{\nfour}{${\mathcal N}=4$ }
+%\newcommand{\ntwo}{${\mathcal N}=2$ }
+\newcommand{\ntwon}{${\mathcal N}=2$}
+\newcommand{\ntwot}{${\mathcal N}= \left(2,2\right) $ }
+\newcommand{\ntwoo}{${\mathcal N}= \left(0,2\right) $ }
+%\newcommand{\none}{${\mathcal N}=1$ }
+\newcommand{\nonen}{${\mathcal N}=1$}
+%\newcommand{\vp}{\varphi}
+%\newcommand{\pt}{\partial}
+%\newcommand{\ve}{\varepsilon}
+%\newcommand{\gs}{g^{2}}
+%\newcommand{\qt}{\tilde q}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+%%
+\newcommand{\p}{\partial}
+\newcommand{\wt}{\widetilde}
+\newcommand{\ov}{\overline}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\md}{\mathcal{D}}
+
+\newcommand{\GeV}{{\rm GeV}}
+\newcommand{\eV}{{\rm eV}}
+\newcommand{\Heff}{{\mathcal{H}_{\rm eff}}}
+\newcommand{\Leff}{{\mathcal{L}_{\rm eff}}}
+\newcommand{\el}{{\rm EM}}
+\newcommand{\uflavor}{\mathbf{1}_{\rm flavor}}
+\newcommand{\lgr}{\left\lgroup}
+\newcommand{\rgr}{\right\rgroup}
+
+\newcommand{\Mpl}{M_{\rm Pl}}
+\newcommand{\suc}{{{\rm SU}_{\rm C}(3)}}
+\newcommand{\sul}{{{\rm SU}_{\rm L}(2)}}
+\newcommand{\sutw}{{\rm SU}(2)}
+\newcommand{\suth}{{\rm SU}(3)}
+\newcommand{\ue}{{\rm U}(1)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Slash character...
+\def\slashed#1{\setbox0=\hbox{$#1$}             % set a box for #1
+   \dimen0=\wd0                                 % and get its size
+   \setbox1=\hbox{/} \dimen1=\wd1               % get size of /
+   \ifdim\dimen0>\dimen1                        % #1 is bigger
+      \rlap{\hbox to \dimen0{\hfil/\hfil}}      % so center / in box
+      #1                                        % and print #1
+   \else                                        % / is bigger
+      \rlap{\hbox to \dimen1{\hfil$#1$\hfil}}   % so center #1
+      /                                         % and print /
+   \fi}                                        %
+
+%%EXAMPLE:  $\slashed{E}$ or $\slashed{E}_{t}$
+
+%%
+
+\newcommand{\LN}{\Lambda_\text{SU($N$)}}
+\newcommand{\sunu}{{\rm SU($N$) $\times$ U(1) }}
+\newcommand{\sunun}{{\rm SU($N$) $\times$ U(1)}}
+\def\cfl {$\text{SU($N$)}_{\rm C+F}$ }
+\def\cfln {$\text{SU($N$)}_{\rm C+F}$}
+\newcommand{\mUp}{m_{\rm U(1)}^{+}}
+\newcommand{\mUm}{m_{\rm U(1)}^{-}}
+\newcommand{\mNp}{m_\text{SU($N$)}^{+}}
+\newcommand{\mNm}{m_\text{SU($N$)}^{-}}
+\newcommand{\AU}{\mc{A}^{\rm U(1)}}
+\newcommand{\AN}{\mc{A}^\text{SU($N$)}}
+\newcommand{\aU}{a^{\rm U(1)}}
+\newcommand{\aN}{a^\text{SU($N$)}}
+\newcommand{\baU}{\ov{a}{}^{\rm U(1)}}
+\newcommand{\baN}{\ov{a}{}^\text{SU($N$)}}
+\newcommand{\lU}{\lambda^{\rm U(1)}}
+\newcommand{\lN}{\lambda^\text{SU($N$)}}
+%\newcommand{\Tr}{{\rm Tr\,}}
+\newcommand{\bxir}{\ov{\xi}{}_R}
+\newcommand{\bxil}{\ov{\xi}{}_L}
+\newcommand{\xir}{\xi_R}
+\newcommand{\xil}{\xi_L}
+\newcommand{\bzl}{\ov{\zeta}{}_L}
+\newcommand{\bzr}{\ov{\zeta}{}_R}
+\newcommand{\zr}{\zeta_R}
+\newcommand{\zl}{\zeta_L}
+\newcommand{\nbar}{\ov{n}}
+
+\newcommand{\CPC}{CP($N-1$)$\times$C }
+\newcommand{\CPCn}{CP($N-1$)$\times$C}
+
+\newcommand{\lar}{\lambda_R}
+\newcommand{\lal}{\lambda_L}
+\newcommand{\larl}{\lambda_{R,L}}
+\newcommand{\lalr}{\lambda_{L,R}}
+\newcommand{\bla}{\ov{\lambda}}
+\newcommand{\blar}{\ov{\lambda}{}_R}
+\newcommand{\blal}{\ov{\lambda}{}_L}
+\newcommand{\blarl}{\ov{\lambda}{}_{R,L}}
+\newcommand{\blalr}{\ov{\lambda}{}_{L,R}}
+
+\newcommand{\bgamma}{\ov{\gamma}}
+\newcommand{\bpsi}{\ov{\psi}{}}
+\newcommand{\bphi}{\ov{\phi}{}}
+\newcommand{\bxi}{\ov{\xi}{}}
+
+\newcommand{\ff}{\mc{F}}
+\newcommand{\bff}{\ov{\mc{F}}}
+
+\newcommand{\eer}{\epsilon_R}
+\newcommand{\eel}{\epsilon_L}
+\newcommand{\eerl}{\epsilon_{R,L}}
+\newcommand{\eelr}{\epsilon_{L,R}}
+\newcommand{\beer}{\ov{\epsilon}{}_R}
+\newcommand{\beel}{\ov{\epsilon}{}_L}
+\newcommand{\beerl}{\ov{\epsilon}{}_{R,L}}
+\newcommand{\beelr}{\ov{\epsilon}{}_{L,R}}
+
+\newcommand{\bi}{{\bar \imath}}
+\newcommand{\bj}{{\bar \jmath}}
+\newcommand{\bk}{{\bar k}}
+\newcommand{\bl}{{\bar l}}
+\newcommand{\bmm}{{\bar m}}
+
+\newcommand{\nz}{{n^{(0)}}}
+\newcommand{\no}{{n^{(1)}}}
+\newcommand{\bnz}{{\ov{n}{}^{(0)}}}
+\newcommand{\bno}{{\ov{n}{}^{(1)}}}
+\newcommand{\Dz}{{D^{(0)}}}
+\newcommand{\Do}{{D^{(1)}}}
+\newcommand{\bDz}{{\ov{D}{}^{(0)}}}
+\newcommand{\bDo}{{\ov{D}{}^{(1)}}}
+\newcommand{\sigz}{{\sigma^{(0)}}}
+\newcommand{\sigo}{{\sigma^{(1)}}}
+\newcommand{\bsigz}{{\ov{\sigma}{}^{(0)}}}
+\newcommand{\bsigo}{{\ov{\sigma}{}^{(1)}}}
+
+\newcommand{\rrenz}{{r_\text{ren}^{(0)}}}
+\newcommand{\bren}{{\beta_\text{ren}}}
+
+\newcommand{\mbps}{m_\text{BPS}}
+\newcommand{\W}{\mathcal{W}}
+\newcommand{\hsigma}{{\hat{\sigma}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\hyphenation{con-fi-ning}
+\hyphenation{Cou-lomb}
+\hyphenation{Yan-ki-e-lo-wicz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{titlepage}
+
+\begin{flushright}
+FTPI-MINN-??/??, UMN-TH-????/??\\
+%January 5/2010/DRAFT
+\end{flushright}
+
+%\vspace{1cm}
+
+\begin{center}
+{  \Large \bf  Curves}
+\end{center}
+
+
+
+\vspace{2mm}
+
+
+\begin{center}
+{\large\bf Abstract}
+\end{center}
+
+\hspace{0.3cm}
+We re-address the topic of spectrum of supersymmetric CP($N-1$) model with twisted massess...
+\vspace{2cm}
+
+
+\end{titlepage}
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                                %
+%                          I N T R O D U C T I O N                               %
+%                                                                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\setcounter{equation}{0}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                                %
+%                    E X A C T  S U P E R P O T E N T I A L                      %
+%                                                                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Exact Superpotential}
+
+In the gauge formulation, the Lagrangian of \ntwoo supersymmetric CP($N-1$) model is,
+\begin{align}
+%
+\cell & ~~=~~ 
+	\frac{1}{e_0^2} \lgr \frac{1}{4} F_{\mu\nu}^2 ~+~ \left|\pt_\mu\sigma\right|^2 ~+~ \frac{1}{2}D^2
+			~+~ \bla \, i\ov{\sigma}{}^\mu\pt_\mu\,\lambda \rgr
+	~~+~~ i\,D\left( |n_i|^2 \;-\; 2\beta \right)
+	\nonumber
+	\\[3mm]
+%
+& 	~~+~~
+	\left|\nabla_\mu n^i\right|^2 
+	~~+~~ \ov{\xi}{}_i\, i\bar{\sigma}{}^\mu\nabla_\mu\,\xi^i  
+	~~+~~ 2\,\sum_i \Bigl| \sigma-\frac{m_i}{\sqrt 2} \Bigr|^2\, |n^i|^2
+	\nonumber
+	\\[3mm]
+%
+&	~~+~~
+	i\sqrt{2}\,\sum_i \Bigl( \sigma -\frac{m_i}{\sqrt 2}\Bigr)\, \ov{\xi}{}_{Ri}\, \xi^i_L 
+	~~-~~ 
+	i\sqrt{2}\,\ov{n}{}_i \left(\lambda_R\,\xi^i_L \,-\, \lambda_L\,\xi^i_R \right)
+\label{fullcpn}
+	\\[2mm]
+%
+&	~~+~~
+	i\sqrt{2}\,\sum_i \Bigl( \ov{\sigma} - \frac{\ov{m}{}_i}{\sqrt 2}\Bigr)\, \ov{\xi}{}_{Li}\, \xi^i_R 
+	~~-~~ 
+	i\sqrt{2}\,{n}^i \left(\ov{\lambda}{}_L\,\ov{\xi}{}_{Ri} \,-\, \ov{\lambda}{}_R\,\ov{\xi}{}_{Li} \right) \,.
+	\notag
+\end{align}
+	Here $ m_i $ are the complex twisted mass parameters. 
+	The sigma model limit is obtained if $ e_0 $ is taken no infinity.
+
+	We should mention that physically the mass parameters are not given by the masses $ m_l $ themselves,
+	but rather by their differences $ m_l - m_k $ (or by $ m_l - m $, where $ m $ is the average mass).
+	This is clear from Eq.~\eqref{fullcpn} as one can shift all masses by any value via a redifinition of
+	$ \sigma $.
+
+	An arbitrary choice of masses breaks the global SU($N$) invariance down to U(1)$^{N-1}$.
+	However, we are interested in a special case when the masses are taken to preserve $ \mc{Z}_N $ invariance, 
+	that is, when they sit on a circle,
+\beq
+\label{mcirc}
+	m_l ~~=~~ m_0 \cdot e^{2 \pi i l / N}\,,
+\eeq
+	with one single complex parameter $ m_0 $.
+	We will see that in this case the theory will in fact depend on $ m_0^N $.
+
+
+	The theory \eqref{fullcpn} classically has $ N $ vacua, which can be seen as solutions with all $ n_i $ but one 
+	equal to zero:
+\begin{align}
+%
+	n_i & ~~=~~ (\, 0,~ ...,~ 1, ...,~ 0\, )\,,  	\qquad\qquad\qquad  k ~=~ 0,..., N-1\,.
+\notag
+	\\
+%
+	\sigma & ~~=~~ m_k \,,
+\label{nvacua}
+\end{align}
+	Note that we chose to number both the masses and the vacua from $0$ to $N-1$, and 
+	we have rescaled $ \sigma $ here,
+\beq
+	\sigma ~~\to~~ \frac{\sigma}{\sqrt 2}\,.
+\eeq
+
+	This theory is known to have an exact superpotential of Veneziano-Yankielowicz type 
+	\cite{VYan}.
+	For a theory with twisted masses the Veneziano-Yankielowicz superpotential was 
+	derived in \cite{AdDVecSal,ChVa,W93,HaHo,Dor}, 
+	and is obtained by integrating out the $ n^l $ fields in Eq.~\eqref{fullcpn},
+\beq
+\label{Wfull}
+	\W_\text{eff}(\hsigma) ~~=~~
+		-\, i\, \tau \hsigma ~~+~~
+		\frac{1}{2\pi} \sum_j (\hsigma - m_j)\, 
+				      \left\{ \ln {\frac{\hsigma - m_j}{\mu}} ~-~ 1 \right\}\,.
+\eeq
+	Here $ \tau $ is the complex coupling
+\beq
+	\tau ~~=~~ i r ~+~ \frac{\theta}{2\pi}\,, \qquad\qquad\qquad   \text{with~~~} r ~~\equiv~~ 2\beta\,,
+\eeq
+	and the RG scale $ \mu $ can be traded for the dynamical scale $ \Lambda $,
+\beq
+	\mu ~~=~~ \Lambda\, e^{2\pi r/N}\,.
+\eeq
+	The hat over $ \hsigma $ indicates that it actually is a (twisted) superfield.
+	The vacua of this theory are found at
+\beq
+\label{sigvac}
+	\sigma_p ~~=~~ \sqrt[N] { \Lambda^N \,+\, m_0^N } \cdot e^{ 2\pi i p / N }\,, 
+\eeq
+	with $ p ~=~ 0,\,...,\, N-1 $, 
+	and we again assume that the masses sit on a circle.
+	If $ | m_ 0 | $ is taken to be large, then it dominates over $ \Lambda $ in \eqref{sigvac},
+	and the vacua take their classical values \eqref{nvacua},
+\beq
+	\sigma_p ~~\approx~~ m_p\,, \qquad\qquad\quad p ~=~ 0,\,...,\,N-1\,.
+\eeq
+
+	Importantly, for determination of the spectrum one needs the values of the superpotential
+	in the vacuum.
+	One obtains,
+\beq
+\label{Wvac}
+	\W_\text{eff} ( \sigma_p ) ~~=~~ 
+		-\, \frac{1}{2\pi}\,  
+                \Bigl\{\, N\, \sigma_p ~+~ \sum_j\, m_j\, \ln \,\frac{\sigma_p - m_j}{\Lambda} \,\Bigr\}\,.
+\eeq
+	Then the general formula for a mass of an elementary BPS state reads as a difference of the 
+	superpotential in two neighboring vacua, 
+\beq
+\label{mbpsgen}
+	\mbps ~~=~~ \W_\text{eff} ( \sigma_{p+1} ) ~~-~~ \W_\text{eff} ( \sigma_p ) ~~+~~ i\, \vec{S} \cdot \vec{m}\,.
+\eeq
+	Here the difference of the vacuum superpotential values gives the topological contribution of the mass,
+	while the last term, with $ \vec{S} $ an integer vector, generically gives the Noether contribution 
+	due to the U(1) charge of a dyonic kink.
+
+	In $ \mc{Z}_N $-symmetric setting of the masses \eqref{mcirc}, the theory at quantum level
+	retains the $ \mc{Z}_{2N} $ symmetry, which the masses do not break.
+	This symmetry manifests itself in the invariance of the spectrum 
+	to the choice of the vacua in \eqref{mbpsgen}.
+	We will from now on choose vacua $ \sigma_0 $ and $ \sigma_1 $ as representatives
+	and focus on the masses of kinks interpolating between the two,
+\beq
+\label{mbpsmain}
+	\mbps ~~=~~  \W_\text{eff} ( \sigma_1 ) ~~-~~ \W_\text{eff} ( \sigma_0 ) ~~+~~ i\, \vec{S} \cdot \vec{m}\,.
+\eeq
+
+	At weak coupling, the quasi-classical limit of the topological contribution is given by
+	a dominating logarithm in \eqref{Wvac} in the regime $ | \Delta m | \,\gg\, \Lambda $:
+\beq
+\label{wkink}
+	\W_\text{eff} ( \sigma_1 ) ~~-~~ \W_\text{eff} ( \sigma_0 ) ~~\sim~~
+		\frac{N}{2\pi}\,
+		\Delta m \cdot \ln \frac{\Delta m}{\Lambda} ~~=~~  r \cdot \Delta m\,, 
+\eeq
+	where $ \Delta m ~=~ m_1 \,-\, m_0 $.
+ 	What qualitatively differs the spectrum at weak coupling and the one at strong coupling is the allowed values of
+	integer vector $ \vec{S} $.
+
+	Classically, it is known what values vector $ \vec{S} $ takes \cite{Dor}\,,
+\beq
+	\vec{S} ~~=~~ (\, 0,~ ...,~ -1, ~~~...,~~ 1,~~ ...,~\, 0\, )\,,
+\eeq
+	with only two entries non-zero.
+	Indeed, classical particle excitations have masses given by the differences $ m_k ~-~ m_l $, with the
+	corresponding topological part in \eqref{mbpsmain} vanishing.
+	There are also solitons and dyonic kinks, the masses of which are determined by \eqref{wkink}, 
+	with $ \vec{S} $ given by their Noether U(1) charge:
+\beq
+\label{classdyons}
+	\vec{S} ~~=~~ (\, 0,~ ...,~ -n, ~~~...,~~ n,~~ ...,~\, 0\, )\,, 
+	\qquad\qquad\quad     n~\in~\mc{Z}\,.
+\eeq
+	This is the charge found from quantization of the global U(1) symmetry of a, strictly speaking, CP(1) soliton
+	embedded into CP($N-1$) --- briefly, the symmetry rotating $ n_k $ and $ n_l $ with respect to each other.
+	One therefore has an infinite tower of dyons the masses of which are given by 
+	Eqs.~\eqref{mbpsmain} and \eqref{classdyons}, with an arbitrary integer $ n $.
+	This is the classical lore on the weak coupling spectrum in the CP($N-1$) theory.
+	What we will argue below is that this picture is incomplete. 
+%	There are other $ N-2 $ U(1)'s which do not manifest themselves in such a semi-classical treatment.
+
+\vspace{0.8cm}
+	Before wrapping up this section, we make a quick mathematical comment on formula \eqref{mbpsmain}. 
+	Strictly speaking, the logarithm, given by \eqref{Wvac} is a multi-branch function. 
+	Therefore, the presence of the $ i\, \vec{S} \cdot \vec{m} $ term in \eqref{mbpsmain}, very
+	generally, reflects the ambiguity of an expression containing a logarithm, or, 
+	in other words, it fixes the branches of the logarithms. 
+	Furthermore, to be as generic as possible, one would need to introduce two sets of integers 
+	instead of one, corresponding to the two sets of logarithms in \eqref{mbpsmain}.
+	
+	This is the manifestation of the problem that the Veneziano-Yankielowicz potential, albeit being exact,
+	is too ambiguous.
+	One does not expect to have $ \sim N^2 $ infinite towers of BPS states 
+	(there are $N$ vacua, for each of which Eq.~\eqref{Wvac} has $ N $ logarithms).
+	Selection rules need to be formulated in order to restrict the set of the BPS states
+	that actually exist, of the kind similar to \eqref{classdyons}. 
+	We postpone the formulation of these rules until further, while for now do a simple mathematical
+	trick which reduces the amount of ambiguity present in Eq.~\eqref{mbpsmain}.
+	Our goal is to turn \eqref{mbpsmain} being a function of all the masses and two vacua into a function
+	of a single parameter $ m_0 $.
+	
+	Let us pull out a factor of $ e^{2\pi i / N} $ from each term in 
+	$ \W_\text{eff} ( \sigma_1 ) $ which originally looks as,
+\beq
+\label{Wsigone}
+	\W_\text{eff} ( \sigma_1 ) ~~=~~ 
+		-\, \frac{1}{2\pi}\,  
+                \Bigl\{\, N\, \sigma_1 ~+~ \sum_j\, m_j\, \ln \,\frac{\sigma_1 - m_j}{\Lambda} \,\Bigr\}\,.
+\eeq
+	Both terms in Eq.~\eqref{Wsigone} do contain this factor.
+	This move turns $ \sigma_1 $ into $ \sigma_0 $, while shifts the numeration of masses in the sum.
+	To keep the numeration of masses in the sum consonant with the logarithms, we also pull out
+	$ e^{2\pi i / N} $ from the argument of the logarithm.
+	This constant addition vanishes when summed with $ \sum\, m_j $,
+	while $ \sigma_1 $ inside the logarithm again turns into $ \sigma_0 $.
+	Effectively one arrives at 
+\beq
+	\W_\text{eff}(\sigma_1) ~~\propto~~ e^{2\pi i / N}\, \W_\text{eff}(\sigma_0).
+\eeq
+	This is not the end of the story, of course, since we were not very careful with the phases
+	of the logarithms, and could have easily missed (and actually did) some $ 2 \pi i $.
+	This owes to the fact that $ \ln(a\,b) ~=~ \ln a ~+~ \ln b $ only modulo $ 2\pi i $.
+	Let us {\it hide} these extra $ 2\pi i \cdot m_j $ coming from the logarithms into 
+	the redefinition of vector $ \vec{S} $, and call the resulting vector $ \vec{Q} $.
+	This vector will then strictly speaking be a different constant in different regions of the 
+	complex space.
+	We postpone intricacies like that until Section~\ref{sbps}, and re-write Eq.~\eqref{mbpsmain} as
+\beq
+\label{mspec}
+	\mbps ~~=~~ \mc{U}_0 (m_0) ~~+~~ i\, \vec{Q} \cdot \vec{m}\,,
+\eeq
+	with an explicit function
+\begin{align}
+%
+\label{unod}
+	\mc{U}_0 (m_0) & ~~=~~ 
+	\\
+%
+\notag
+	&\!\!\!\! -\, \frac{1}{2\pi} \lgr e^{2\pi i / N} \,-\, 1 \rgr 
+	\biggl\{\, N \sqrt[N] { m_0^N \,+\, \Lambda^N }  ~+~
+		\sum_j\, m_j\, \ln \, \frac{ \sqrt[N] { m_0^N \,+\, \Lambda^N } \,-\, m_j } { \Lambda} \,\biggr\}\,.
+\end{align}
+	Here $ m_j $ is meant to be a function of $ m_0 $ as well, via \eqref{mcirc}. 
+	The questions about the domain of parameter $ m_0 $ are postponed until Section~\ref{sbps} too.
+	The main claim is,
+\begin{itemize}
+\item
+	All ambiguity related to the logarithms in Eq.~\eqref{mspec} has been shifted into $ \vec{Q} $. 
+	Now $ \mc{U}_0(m_0) $ is a fixed single-valued function of the complex parameter $ m_0 $.
+\item
+	Eq.~\eqref{mspec} has a more direct relation to the spectrum than Eq.~\eqref{mbpsmain}.
+\end{itemize}
+	This way we have arrived to our main formula.
+	One understands that vector $ \vec{Q} $ is now different from $ \vec{S} $ in Eq.~\eqref{mbpsmain}.
+	However, in the quasi-classical limit, which corresponds to large $ |m| $ {\it and} 
+	large excitation number $ n $, the difference between them is negligible.
+	Therefore, in that limit, vector $ \vec{Q} $ is expected to take the form akin to the 
+	RHS of Eq.~\eqref{classdyons},
+\beq
+\label{qclass}
+	\vec{Q} ~~=~~ (\, 0,~ ...,~ -n, ~~~...,~~ n,~~ ...,~\, 0\, )\,, 
+	\qquad\qquad\quad     n~\in~\mc{Z}\,.
+\eeq
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                                %
+%                         M I R R O R  T R E A T M E N T                         %
+%                                                                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Mirror Treatment}
+
+	Now we gradually pass to the discussion of what is known 
+	about the strong coupling spectrum.
+	There are $ N $ BPS kinks.
+	They can be seen in the mirror representation \cite{MR1}, 
+\beq
+\label{mirror}
+	\W_\text{mirror}^\text{CP($N-1$)} ~~=~~
+		-\, \frac{\Lambda}{4\pi}\, 
+		\Bigl\{\, \sum_j X_j ~~-~~ \sum_j \frac{m_j}{\Lambda}\, \ln X_j \,\Bigr\}\,,
+\eeq
+	with
+\beq
+	\prod_j\, X_j ~~=~~ 1\,.
+\eeq
+	As shown in \cite{Shifman:2010id}, one can determine the masses of the $ N $ kinks
+	near the origin, $ | m_j | ~\ll~ \Lambda $:
+\beq
+\label{mirrorm}
+	\mbps ~~\approx~~ \frac{N}{2\pi} \lgr e^{2\pi i / N} \,-\, 1 \rgr \Lambda
+			   ~~+~~ i\, ( m_j \,-\, m )\,,
+\eeq
+	where $ m $ is the average mass, vanishing in the $ \mc{Z}_N $ case.
+	So, to the linear order in the mass parameter, one has $ N $ kinks with the masses given
+	by a large $ \Lambda $ term, and the splittings determined by $ m_j $ themselves,
+\beq
+\label{smirror}
+	\mbps ~~\approx~~\frac{N}{2\pi} \lgr e^{2\pi i / N} \,-\, 1 \rgr \Lambda
+			   ~~+~~ i\, m_j\,,
+	\qquad\quad j~=~ 0,\,...,\, N-1\,.
+\eeq
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                                %
+%                     A R G Y R E S - D O U G L A S  P O I N T                   %
+%                                                                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Argyres-Douglas Point}
+
+	If all masses $ m_j $ sit on the circle, we have argued that the corresponding
+	vacua will also be forced to sit on the circle, as governed by the exact superpotential
+	\eqref{Wfull}.
+	There are therefore only simultaneous collisions of all vacua $ \sigma_p $
+	in the theory.
+	The Argyres-Douglas points \cite{AD} will therefore correspond to 
+\beq
+	\sigma_p ~~=~~ 0\,.
+\eeq
+	This occurs whenever $ m_0 $ equals $ \Lambda $ times an $N$-th root of $ -1 $,
+\beq
+	m_0^\text{AD} ~~=~~ \Lambda \, e^{i \pi / N} \cdot e^{2\pi i l / N}\,,
+	\qquad\qquad\quad 
+	l ~=~ 0,\,...,\, N-1 \,.
+\eeq
+	In particular, the most convenient for us will be the two AD points closest to the
+	real positive axis:
+\beq
+	m_0^\text{AD} ~~=~~ \Lambda \, e^{i \pi / N}
+	\qquad\quad
+	\text{and}
+	\qquad\quad
+	m_0^\text{AD} ~~=~~ \Lambda \, e^{- i \pi / N}\,.
+\eeq
+
+	One might wonder why we make a distinction between the different AD points, when
+	in the physical complex $ m^N $ plane they all blend into one same point $ m^N ~=~ - 1 $
+	(in units of $ \Lambda $).
+	The reason is that while physically there is indeed only one AD, in $ m^0 $ plane
+	one actually gains a monodromy when passing from one AD point to another \cite{Dor,ls1}.
+	We would like to observe that monodromy.
+	When needed, one can always resort to the physical $ m^N $ plane by raising the 
+	results from $ m^0 $ plane to the $ N $-th power (but not the other way round).
+
+	The crucial observation about the AD point is that one of the soliton states becomes massless
+	at that location.
+	Briefly, if all the vacua merge at the AD point, then Eq.~\eqref{mbpsmain} tells one that
+	the kink with $ \vec{S} ~=~ 0 $ becomes massless 
+\beq
+	\mbps ~~=~~ \W_\text{eff}(\sigma_1) ~-~ \W_\text{eff}(\sigma_0) ~~=~~ 0\,.
+\eeq
+	We quote this as a qualitative statement and render it more precise in Section~\ref{sbps}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                                %
+%                           B P S  S P E C T R U M                               %
+%                                                                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{BPS Spectrum}
+\label{sbps}
+
+	We now turn to the discussion of the BPS spectrum in the strong coupling region.
+	Surprisingly, the conclusions obtained in the strong coupling sector will allow us
+	to make implications for the weak coupling sector as well.
+	We first collect the results known and trustworthy about CP(1) theory,
+	as the simplest and well-studied case, and then increase $ N $.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{BPS Spectrum in CP(1) at Strong Coupling}
+
+	There are two kinks in the strong coupling sector with quantum numbers
+	$ (T, Q) $ $ = (1, 0) $ and $ (T, Q) $ $ = (1, 1) $.
+	Here $ T $ bears the convential meaning of the topological charge, the
+	constant that multiplies $ \W_\text{eff}(\sigma_1) \,-\, \W_\text{eff}(\sigma_0) $,
+	and $ Q \in \mc{Z} $ is the U(1) charge, {\it i.e.} the one from Eq.~\eqref{qclass}.
+
+	The formula for the BPS mass in CP(1) theory is well-known. 
+	We re-derive it from our master equations \eqref{mspec} and \eqref{unod}.
+	Instead of $ m_0 $, it conventionally is written in terms of the mass difference $ \Delta m $ 
+	$ ~=~ m_1 - m_0 $ $~=~ - 2 m_0 $,	
+\beq
+\label{mcp1}
+	\mbps^\text{CP(1)} ~~=~~
+	\frac{1}{\pi} \lgr   \sqrt{ \Delta m^2 \,+\, 4 \Lambda^2\, }
+			~-~ \frac{\Delta m}{2}\, 
+			    \ln\, \frac {\Delta m \,+\, \sqrt{ \Delta m^2 \,+\, 4 \Lambda^2\, }}
+                                        {\Delta m \,-\, \sqrt{ \Delta m^2 \,+\, 4 \Lambda^2\, }}
+                      \rgr
+	\!~~+~~
+	i\,\vec{Q} \cdot \vec{m}\,.
+\eeq
+	The Argyres-Douglas points here are $ \Delta m ~=~ \pm\, 2i \Lambda $, and correspond to
+	the vanishing square root.
+	Let us exhibit the monodromy which occurs when one moves from one AD point to the other.
+	Say, choose the branch of the logarithm such that at the point $ \Delta m ~=~ 2i \Lambda $ 
+	the logarithm vanishes.
+	Then the kink $ \vec{Q} ~=~ 0 $ becomes massless at that point. 
+	Let us move from the point $ 2i \Lambda $ to $ - 2i \Lambda $ along a large circle, see
+	Fig~\ref{contour_Dm}a.
+\begin{figure}
+\begin{center}
+\begin{tabular}{cc}
+%
+\epsfxsize=6cm
+ \epsfbox{contour_Dm.epsi}
+~~
+ &
+\epsfxsize=5.2cm
+ \epsfbox{contour_ln.epsi}
+~~
+  \\
+%
+	(a)  &  (b)
+\end{tabular}
+\end{center}
+\caption{(a) The large-radius contour in the $ \Delta m $ plane, starting at the AD point $ 2i \Lambda $
+	and terminating at the point $ -2i \Lambda $.
+	 (b) The same contour shown in the plane of 
+	$ z ~=~ \frac {\Delta m \,+\, \sqrt{ \Delta m^2 \,+\, 4 \Lambda^2\, }}
+                      {\Delta m \,-\, \sqrt{ \Delta m^2 \,+\, 4 \Lambda^2\, }} $
+	--- the argument of the logarithm in Eq.~\eqref{mcp1}.}
+\label{contour_Dm}
+\end{figure}
+	It is easy to show that the argument of the logarithm in Eq.~\eqref{mcp1} will also sketch
+	a large circle, starting and terminating at one, see Fig~\ref{contour_Dm}b.
+	However, this contour arrives at the previous branch of the logarithm compared to where 
+	it started from.
+	The argument of the logarithm is forced to experience a discontinuity of $ + 2 \pi i $
+	needed for $ \Delta m $ to hold on the physical branch. 
+	As a result, the masses of kinks now shift compared to $ \Delta m ~=~ +\, 2 i \Lambda $ point,
+\beq
+	m_\text{BPS}^{CP(1)}( -\, 2 i \Lambda ) ~~=~~ - \, i\, \Delta m ~~+~~ i\,\vec{Q} \cdot \vec{m}\,.
+\eeq
+	One observes, that it is the $ (T, Q) $ $ = (1, 1) $ kink which becomes massless 
+	(in terms of $ \vec{Q} $, it is the $ \vec{Q} ~=~ (-1,~ 1) $ kink).
+
+	How does it become that at weak coupling one has the whole tower of states
+	while at the strong coupling there are only two?
+	Similar to what it occurs in the Seiberg-Witten theory, the states of the weak coupling sector
+	decay on the curves of marginal stability \cite{Bilal:1996sk,Bilal:1997st}.
+	Only two states survive when crossing into the strong coupling region, 
+	and those are precisely the states which become massless at the Argyres-Douglas points.
+
+	Finally for CP(1) let us show that Eq.~\eqref{mcp1} is coherent with the result from the 
+	mirror theory \eqref{smirror}.
+	At small $ \Delta m $, the argument of the logarithm in Eq.~\eqref{mcp1} just turns into $ -1 $, 
+	while the first term in the bracket can be rounded to $ \Lambda $.
+	Re-writing $ i\, \vec{Q}\cdot\vec{m} $ as $ i\, Q \cdot \Delta m $ with $ Q = 0 \text{~or~} 1 $, 
+	we come to
+\beq
+	m_\text{BPS}^{CP(1)} ~~\approx~~ 
+		\frac{1}{\pi}\, 2\Lambda  ~~+~~ i\, \Bigl(Q - \frac{1}{2}\Bigr)\, \Delta m\,.
+\eeq
+	It is easy to see that this is indeed the spectrum predicted by Eq.~\eqref{smirror} to the 
+	linear order in $ \Delta m $.
+
+\vspace{0.8cm}
+	We can now formulate the {\it selection rules} for the spectrum of BPS states in the overall
+	region of the complex mass parameter $ m_0 $:
+\begin{itemize}
+\item
+	{\it Quasi-classical limit} --- the spectrum at large $ m_0 $ and large excitation number $ n $
+	must reproduce the semi-classical result \eqref{wkink}, \eqref{qclass}:
+\beq
+\mbps ~~\simeq~~ \frac{N}{2\pi}\,
+		\Delta m \cdot \ln \frac{\Delta m}{\Lambda}  
+	    ~~+~~
+	i\, Q \cdot ( m_1 \,-\, m_0 )\,
+\eeq
+
+\item
+	{\it Argyres-Douglas point} --- the only states that survive when crossing from weak coupling 
+	into the strong coupling region are those $ N $ states which become massless at the AD points
+
+\item
+	{\it Mirror spectrum} --- the latter $ N $ kinks must form the spectrum given by mirror 
+	formula \eqref{smirror} in the small $ m_0 $ limit 
+\end{itemize}
+
+\vspace{2.0cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Strong Coupling Spectrum in CP(2)}
+\vspace{2.0cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Spectrum in CP($N-1$)}
+\vspace{2.0cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                                %
+%            C U R V E S  O F  M A R G I N A L  S T A B I L I T Y                %
+%                                                                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Curves of Marginal Stability}
+
+\begin{itemize}
+
+\item
+	$ N - 1 $ towers ~~$ \Longrightarrow $~~ $ N - 1 $ curves
+
+\item
+	1st curve passes through the AD point;\\
+	expansion near the AD point
+
+\item
+	large-$N$ limit, from expansion in the right half-plane
+
+\end{itemize}
+\vspace{2.0cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                                %
+%                            C O N C L U S I O N                                 %
+%                                                                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+
+\begin{itemize}
+\item
+	$ N - 1 $ towers which quasiclassically all blend and cannot be resolved;\\
+	only one tower is seen classically
+
+\item
+	Consequences for SQCD
+
+\end{itemize}
+\vspace{2.0cm}
+
+\begin{thebibliography}{99}
+
+\bibitem{Dor}
+N.~Dorey,
+%``The BPS spectra of two-dimensional
+%supersymmetric gauge theories
+%with  twisted mass terms,''
+JHEP {\bf 9811}, 005 (1998) [hep-th/9806056].
+%%CITATION = HEP-TH 9806056;%%
+
+\bibitem{MR1}
+  K.~Hori and C.~Vafa,
+{\em Mirror symmetry,}
+  arXiv:hep-th/0002222.
+  %%CITATION = HEP-TH/0002222;%%
+  
+\bibitem{MR2}
+E.~Frenkel and A.~Losev,
+  %``Mirror symmetry in two steps: A-I-B,''
+  Commun.\ Math.\ Phys.\  {\bf 269}, 39 (2006)
+  [arXiv:hep-th/0505131].
+  %%CITATION = CMPHA,269,39;%%
+
+%\cite{Shifman:2010id}
+\bibitem{Shifman:2010id}
+  M.~Shifman, A.~Yung,
+  %``Non-Abelian Confinement in N=2 Supersymmetric QCD: Duality and Kinks on Confining Strings,''
+  Phys.\ Rev.\  {\bf D81}, 085009 (2010).
+  [arXiv:1002.0322 [hep-th]].
+
+\bibitem{ls1}
+  M.~Shifman, A.~Vainshtein and R.~Zwicky,
+  %``Central charge anomalies in 2D sigma models with twisted mass,''
+  J.\ Phys.\ A  {\bf 39}, 13005 (2006)
+  [arXiv:hep-th/0602004].
+  %%CITATION = JPAGB,A39,13005;%
+
+%\cite{Olmez:2007sg}
+\bibitem{Olmez}
+  S.~\"{O}lmez and M.~Shifman,
+  %``Curves of Marginal Stability in Two-Dimensional CP(N-1) Models with
+  %Z_N-Symmetric Twisted Masses,''
+  J.\ Phys.\ A  {\bf 40}, 11151 (2007)
+  [arXiv:hep-th/0703149].
+  %%CITATION = JPAGB,A40,11151;%%
+
+\bibitem{VYan}
+ G.~Veneziano and S.~Yankielowicz,
+  %``An Effective Lagrangian For The Pure N=1 Supersymmetric Yang-Mills
+  %Theory,''
+  Phys.\ Lett.\  B {\bf 113}, 231 (1982).
+  %%CITATION = PHLTA,B113,231;%%
+
+\bibitem{AdDVecSal}
+A.~D'Adda, A.~C.~Davis, P.~DiVeccia and P.~Salamonson,
+%"An effective action for the supersymmetric CP$^{n-1}$ models,"
+Nucl.\ Phys.\ {\bf B222} 45 (1983).
+
+\bibitem{ChVa}
+S.~Cecotti and C. Vafa,
+%"On classification of \ntwo supersymmetric theories,"
+Comm. \ Math. \ Phys. \ {\bf 158} 569 (1993)
+[hep-th/9211097].
+
+\bibitem{W93}
+E.~Witten,
+  %``Phases of N = 2 theories in two dimensions,''
+  Nucl.\ Phys.\ B {\bf 403}, 159 (1993)
+  [hep-th/9301042].
+  %%CITATION = HEP-TH 9301042;%%
+
+\bibitem{HaHo}
+A.~Hanany and K.~Hori,
+  %``Branes and N = 2 theories in two dimensions,''
+  Nucl.\ Phys.\  B {\bf 513}, 119 (1998)
+  [arXiv:hep-th/9707192].
+  %%CITATION = NUPHA,B513,119;%%
+
+\bibitem{AD}
+P. C.~Argyres and M. R.~Douglas,
+%``New Phenomena in SU(3) Supersymmetric Gauge Theory'' 
+Nucl. \ Phys. \ {\bf B448}, 93 (1995)   
+[arXiv:hep-th/9505062].
+%%CITATION = NUPHA,B448,93;%%
+  
+%\cite{Bilal:1996sk}
+\bibitem{Bilal:1996sk}
+  A.~Bilal, F.~Ferrari,
+  %``Curves of marginal stability, and weak and strong coupling BPS spectra in N=2 supersymmetric QCD,''
+  Nucl.\ Phys.\  {\bf B480}, 589-622 (1996).
+  [hep-th/9605101].
+
+%\cite{Bilal:1997st}
+\bibitem{Bilal:1997st}
+  A.~Bilal, F.~Ferrari,
+  %``The BPS spectra and superconformal points in massive N=2 supersymmetric QCD,''
+  Nucl.\ Phys.\  {\bf B516}, 175-228 (1998).
+  [hep-th/9706145].
+
+\end{thebibliography}
+
+
+\end{document}

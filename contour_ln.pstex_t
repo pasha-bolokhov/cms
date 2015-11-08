@@ -1,0 +1,17 @@
+\begin{picture}(0,0)%
+\includegraphics{contour_ln.pstex}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(9666,9044)(1157,-8483)
+\put(4777,-4581){\makebox(0,0)[lb]{\smash{{\SetFigFont{34}{40.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}-1}%
+}}}}
+\put(10036,-216){\makebox(0,0)[lb]{\smash{{\SetFigFont{34}{40.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ z $}%
+}}}}
+\end{picture}%
